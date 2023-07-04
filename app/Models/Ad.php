@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,6 +10,13 @@ class Ad extends Model
 {
     protected $fillable = ['title', 'body', 'price'];
     use HasFactory;
+
+    
+
+
+public function user(){
+        return $this->hasMany(User::class);
+    }
 
     public function category()
     {

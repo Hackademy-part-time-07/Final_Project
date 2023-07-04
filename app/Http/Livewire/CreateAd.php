@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire;
 use App\Models\Ad;
+use App\Models\Category;
 
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class CreateAd extends Component
@@ -24,11 +26,13 @@ class CreateAd extends Component
     ];
 
     public function store () {
-        Ad::create([
+        $category = Category::find($this->category);
+        $ad = $category->ads()->create([
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price
         ]);
+        Auth::user()->ads()->save($ad);
         session()->flash('message', 'Anuncio Creado con éxito');
         $this->cleanForm();
     }
