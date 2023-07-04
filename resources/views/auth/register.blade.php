@@ -49,7 +49,7 @@
                     </div>
                     <!--Password Confirmation-->
                     <div class="form-field-edit form-field space-around my-2">
-                        <input type="password" name="password" id="password_confirmation" class="form-control forms_field-input" placeholder="Tu contraseña otra vez">
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control forms_field-input" placeholder="Tu contraseña otra vez">
                         <div class="validate"></div>
 
                     </div>

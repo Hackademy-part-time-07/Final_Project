@@ -31,7 +31,7 @@
                     </button>
                 </form>
 
-                <p class="my-3">¿Aún no eres de los nuestros? <a href="#" class="btn btn-info btn-sm ms-2">Registrate!</a></p>
+                <p class="my-3">¿Aún no eres de los nuestros? <a href="{{ route('register') }}" class="btn btn-info btn-sm ms-2">Registrate!</a></p>
             </div>
         </div>
     </div>
