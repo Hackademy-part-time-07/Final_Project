@@ -1,8 +1,7 @@
 <x-layout>
-    <x-slot> name="title"> Rapido - Register</x-slot>
     <!--Register-->
-   <div class="container-fluid bg-accent vh-100">
-     <div class="row mb-5 pb-5">
+    <div class="container-fluid bg-accent vh-100">
+    <div class="row mb-5 pb-5">
         <div class="col-12 col-md-8 ms-5">
             <div class="d-flex flex-column align-items-center">
             <div class="form-content justify-content-center mb-5 pb-5">
@@ -66,13 +65,13 @@
 
             </div>
 
-         </div>
+        </div>
 
         </div>
 
     </div>
-     
-   </div>
+
+</div>
 
 </section>
 </x-layout>

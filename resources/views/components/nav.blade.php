@@ -12,5 +12,23 @@
             <a class="nav-link disabled">Disabled</a>
             </div>
         </div>
+        @guest
+            @if (Route::has('login'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}"><span>Entrar</span></a>
+                </li>
+            @endif
+            @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}"><span>Registrar</span></a>
+                </li>
+            @endif
+            @else
+            <li class="nav-item">
+                <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+                @csrf
+                </form>
+                <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+        @endguest
     </div>
 </nav>
