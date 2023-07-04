@@ -11,7 +11,17 @@ class CreateAd extends Component
     public $body;
     public $price;
 
-    
+    protected $rules = [
+        'title'=>'rquired|min:4',
+        'body'=>'required|min:8',
+        'price'=>'required|numeric'
+    ];
+
+    protected $messages = [
+        'required'=>'Field :attribute is required, please fill it',
+        'min'=>'Field :attribute should be longer than :min',
+        'numeric'=>'Field :attribute must be a number'
+    ];
 
     public function store () {
         Ad::create([
@@ -19,7 +29,12 @@ class CreateAd extends Component
             'body'=>$this->body,
             'price'=>$this->price
         ]);
+        session()->flash('message', 'Anuncio Creado con éxito');
         $this->cleanForm();
+    }
+
+    public function update($propertyName) {
+        $this->validateOnly($propertyName);
     }
 
     public function cleanForm() {
