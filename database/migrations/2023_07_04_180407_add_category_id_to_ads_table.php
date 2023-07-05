@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-class addCategoryIDToAds extends Migration
+return new class extends Migration
 
 {
     /**
@@ -27,4 +27,4 @@ class addCategoryIDToAds extends Migration
             $table->dropColumn('category_id');
         });
     }
-}
+};

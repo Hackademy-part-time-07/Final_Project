@@ -24,7 +24,7 @@
                 </li>
             @endif
             @else
-            <a class="btn btn-info" href="{{ route('ad.create') }}">Crear anuncio</a>
+            <a class="btn btn-info" href="{{ route('ads.create') }}">Crear anuncio</a>
             <li class="nav-item">
                 <form id="logoutForm" action="{{ route('logout') }}" method="POST">
                 @csrf

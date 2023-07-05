@@ -13,7 +13,7 @@
 <body>
     <x-nav/>
     {{ $slot }}
-    {{ $script ?? '' }}
+    
 
 
 
@@ -24,6 +24,7 @@
 
     <x-footer/>
     @livewireScripts
+    {{ $script ?? '' }}
     @vite(['resources/js/app.js'])
 </body>
 </html>
