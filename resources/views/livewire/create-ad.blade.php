@@ -25,7 +25,17 @@
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Precio:</label>
+            <label for="category" class="form-label">Categoría:</label>
+            <select wire:model.defer="category" class="form-control">
+                <option value="">Selecciona una categoría</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Descripción:</label>
             <textarea wire:model="body" cols="30" rows="15" class="form-control" @error('body') is-invalid @enderror></textarea>
             @error('body')
             {{ $message }}
