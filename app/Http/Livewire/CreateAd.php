@@ -12,10 +12,12 @@ class CreateAd extends Component
     public $title;
     public $body;
     public $price;
+    public $category;
 
     protected $rules = [
         'title'=>'rquired|min:4',
         'body'=>'required|min:8',
+        'category'=>'required',
         'price'=>'required|numeric'
     ];
 
@@ -44,6 +46,7 @@ class CreateAd extends Component
     public function cleanForm() {
         $this->title = "";
         $this->body = "";
+        $this->category="";
         $this->price = "";
 
     }

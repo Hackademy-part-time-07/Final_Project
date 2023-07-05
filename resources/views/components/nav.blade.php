@@ -30,6 +30,7 @@
                 @csrf
                 </form>
                 <a id="logoutBtn" class="nav-link" href="#">Salir</a>
+            </li>
         @endguest
     </div>
 </nav>
