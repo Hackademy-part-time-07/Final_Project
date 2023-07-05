@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('welcome');
-});
+Route::get('/', [PublicController::class, 'index'])->name('home');
 
 
 Route::get('/ads/create', [AdController::class,'create'])->name('ads.create');
