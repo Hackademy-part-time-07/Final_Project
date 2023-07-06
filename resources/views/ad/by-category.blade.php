@@ -1,6 +1,5 @@
 <x-layout>
     <x-slot name='title'>{{ $category->name }}</x-slot> 
-    {{$ads->links()}}
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -33,7 +32,8 @@
                 <a href="{{ route('ads.create') }}" class="btn btn-success">Vende tu primer objeto</a> o <a href="{{ route('home') }}" class="btn btn-primary">Vuelve a la Home</a>
             </div>
             @endforelse
+            
         </div>
     </div>
-    
+    {{$ads->links()}}
 </x-layout>
