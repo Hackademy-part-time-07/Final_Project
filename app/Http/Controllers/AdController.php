@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Ad;
 use Illuminate\Http\Request;
 
 class AdController extends Controller
@@ -14,7 +14,7 @@ class AdController extends Controller
         return view('ad.create');
     }
 
-    public function show( $ad){ 
+    public function show(Ad $ad){ 
         return view("ad.show",compact('ad'));
     }
 }
