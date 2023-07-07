@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg mb-5 barraNav">
     <div class="container">
-        <a class="navbar-brand text-uppercase" href="#"><strong>{{ env('APP_NAME') }}</strong></a>
+        <a class="navbar-brand text-uppercase" href="{{ route('home') }}"><strong>{{ env('APP_NAME') }}</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -12,8 +12,9 @@
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a></li>
                             @endforeach
+                        </ul>
+                    </li>
                 </ul>
-            <a class="nav-link active home" aria-current="page" href="{{ route('home') }}">Home</a>
             </div>
         </div>
         @guest
