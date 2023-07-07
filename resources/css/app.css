@@ -1,1 +1,26 @@
 @import '~bootstrap/dist/css/bootstrap';
+
+:root{
+    --primary: rgb(149, 83, 83);
+    --secondary:rgb(83, 33, 33);
+}
+
+.barraNav{
+    background-color: var(--primary);
+    box-shadow: 1px 10px 5px 0px rgba(0, 0, 0, 0.404);
+}
+
+.home{
+    position: relative;
+    left: 10vw;
+    
+}
+
+
+.piedepagina{
+    background-color: var(--primary);
+}
+
+.contenedorfooter{
+    margin-top: 15vh;
+}

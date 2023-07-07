@@ -9,6 +9,7 @@
     {{-- /*****BOOTSTRAP y CSS*****/ --}}
     @vite(['resources/css/app.css'])
     {{ $style ?? '' }}
+
 </head>
 <body>
     <x-nav/>

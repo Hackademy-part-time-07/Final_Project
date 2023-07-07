@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary mb-5">
+<nav class="navbar navbar-expand-lg mb-5 barraNav">
     <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,7 +13,7 @@
                                 <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a></li>
                             @endforeach
                 </ul>
-            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+            <a class="nav-link active home" aria-current="page" href="{{ route('home') }}">Home</a>
             </div>
         </div>
         @guest
