@@ -10,10 +10,18 @@
     box-shadow: 1px 10px 5px 0px rgba(0, 0, 0, 0.404);
 }
 
+.categorias{
+    position: relative;
+    top: 7vh;
+}
+
+ul{
+    list-style-type: none
+}
+
 .home{
     position: relative;
     left: 10vw;
-    
 }
 
 
