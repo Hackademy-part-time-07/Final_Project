@@ -3,13 +3,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Bienvenidos a esta pagina</h1>
+                <h1>Últimos anuncios</h1>
             </div>
         </div>
         <div class="row">
             @forelse ($ads as $ad)
             <div class="col-12 col-md-4">
-                <div class="card mb-5">
+                <div class="card mb-5 anuncios">
                     <img src="https://via.placeholder.com/150" alt="..." class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
