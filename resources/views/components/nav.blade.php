@@ -18,9 +18,6 @@
             </div>
         </div>
         <a class="btn btn-success mx-3" href="{{ route('ads.create') }}">Crear anuncio</a>
-            <form id="logoutForm" action="{{ route('logout') }}" method="POST">
-                @csrf
-            </form>
         @guest
             @if (Route::has('login'))
                     <a class="btn btn-dark mx-3" href="{{ route('login') }}"><span>Entrar</span></a>
@@ -29,7 +26,32 @@
                     <a class="btn btn-info" href="{{ route('register') }}"><span>Registrar</span></a>
             @endif
             @else
-            <a id="logoutBtn" class="btn btn-warning" href="#">Salir</a>
+            <ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }} 
+                    </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    @if (Auth::user()->is_revisor)
+                        <li>
+                            <a href="{{ route('revisor.home') }}" class="dropdow-item">
+                                Revisor
+                                <span class="badge rounded-pill bg-danger">
+                                    {{ \App\Models\Ad::ToBeRevisionedCount() }}
+                                </span>
+                            </a>
+                        </li>
+                    @endif
+                    <li>
+                        <form id="logoutForm" action="{{ route('logout') }}" method="POST">
+                            @csrf
+                        </form>
+                        <a id="logoutBtn" href="#">Salir</a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+            
         @endguest
     </div>
 </nav>
