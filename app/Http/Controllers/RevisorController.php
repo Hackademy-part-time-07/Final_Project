@@ -19,7 +19,7 @@ class RevisorController extends Controller
     }
 
     public function becomeRevisor(){
-        Mail::to('admin@metapop.es')->send(new BecomeRevisor(Auth::user()));
+        Mail::to('adrian.busquets@hotmail.com')->send(new BecomeRevisor(Auth::user()));
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
     }
 
