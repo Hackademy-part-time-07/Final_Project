@@ -66,10 +66,19 @@
                 </div>
                 <div class="row my-3">
                     <div class="col-6">
-                        <form action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
+                        <form action="{{ route('revisor.ad.accept', $ad) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <button class="btn btn-danger">Aceptar</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-6">
+                        <form action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <button class="btn btn-danger">Rechazar</button>
                         </form>
                     </div>
                 </div>
