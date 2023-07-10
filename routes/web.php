@@ -24,10 +24,13 @@ Route::get('/ads/create', [AdController::class,'create'])->name('ads.create');
 
 Route::get('/revisor', [RevisorController::class, 'index'])->name('revisor.home');
 
+Route::get('revisor/become', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('revisor.become');
+
+Route::get('revisor/{user}/make', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('revisor.make');
 
 Route::get('/ads/{ad}', [AdController::class,'show'])->name("ads.show");
 
-// Route::get('revisor/become', [Re]);
+
 
 Route::get('/category/{category:name}/ads', [PublicController::class, 'adsByCategory'])->name('category.ads');
 

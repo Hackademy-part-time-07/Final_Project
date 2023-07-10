@@ -12,7 +12,7 @@ class MakeUserRevisor extends Command
      *
      * @var string
      */
-    protected $signature = 'metapop:makeUserRevisor';
+    protected $signature = 'metapop:makeUserRevisor {email}';
 
     /**
      * The console command description.
@@ -31,8 +31,9 @@ class MakeUserRevisor extends Command
     public function handle()
     {
         //
-        $email = $this->ask('Introducir correo de usuario');
-        $user = User::where('email', $email)->first();
+        // $email = $this->ask('Introducir correo de usuario');
+        // $user = User::where('email', $email)->first();
+        $user = User::where('email', $this->argument('email'))->first();
         if (!$user) {
             $this->error('Usuario no encontrado');
             return;
