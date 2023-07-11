@@ -31,7 +31,14 @@ ul{
 }
 
 .anuncios{
-    box-shadow: 6px 7px 23px 0px rgba(0, 0, 0, 0.633)
+    box-shadow: 6px 7px 23px 0px rgba(0, 0, 0, 0.633);
+    transition: all 0.5s ease;
+}
+
+.anuncios:hover{
+    box-shadow: 6px 7px 23px 0px rgba(0, 0, 0, 0.971);
+    background-color: var(--secondary);
+    color: white;
 }
 
 
