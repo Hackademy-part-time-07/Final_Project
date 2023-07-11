@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Ad;
-
+use App\Models\User;
 use App\Mail\BecomeRevisor;
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +14,7 @@ class RevisorController extends Controller
     
     public function __construct()
     {
-        $this->middleware('isRevisor');
+        // $this->middleware('isRevisor');
     }
 
     public function becomeRevisor(){
@@ -27,7 +26,7 @@ class RevisorController extends Controller
         }
     }
 
-    public function makeUserRevisor( $user){
+    public function makeRevisor( $user){
         Artisan::call('metapop:makeUserRevisor', ['email'=>$user->email]);
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Ya tenemos un compañero más']);
     }
