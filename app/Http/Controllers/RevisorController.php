@@ -19,11 +19,15 @@ class RevisorController extends Controller
     }
 
     public function becomeRevisor(){
-        Mail::to('adrian.busquets@hotmail.com')->send(new BecomeRevisor(Auth::user()));
+        if (Auth::user()->is_revisor) {
+            return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Ya eres revisor!']);
+        } else {
+            Mail::to('metapop@hotmail.com')->send(new BecomeRevisor(Auth::user()));
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
+        }
     }
 
-    public function makeRevUserisor( $user){
+    public function makeUserRevisor( $user){
         Artisan::call('metapop:makeUserRevisor', ['email'=>$user->email]);
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Ya tenemos un compañero más']);
     }
