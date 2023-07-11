@@ -14,7 +14,7 @@ class RevisorController extends Controller
     
     public function __construct()
     {
-        // $this->middleware('isRevisor');
+        $this->middleware('isRevisor')->except('becomeRevisor','makeRevisor');
     }
 
     public function becomeRevisor(){
@@ -22,7 +22,7 @@ class RevisorController extends Controller
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
     }
 
-    public function makeRevisor( $user){
+    public function makeRevisor(User $user){
         Artisan::call('metapop:makeUserRevisor', ['email'=>$user->email]);
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Ya tenemos un compañero más']);
     }
