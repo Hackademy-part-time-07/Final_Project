@@ -27,7 +27,6 @@ Route::get('/revisor', [RevisorController::class, 'index'])->name('revisor.home'
 Route::get('revisor/become', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('revisor.become');
 
 Route::get('revisor/{user}/make', [RevisorController::class, 'makeRevisor'])->middleware('auth')->name('revisor.make');
-Route::get('revisor/{user}/refuse', [RevisorController::class, 'refuseRevisor'])->middleware('auth')->name('revisor.refuse');
 
 Route::patch('/revisor/ad/{ad}/accept', [RevisorController::class, 'acceptAd'])->name('revisor.ad.accept');
 Route::patch('/revisor/ad/{ad}/reject', [RevisorController::class, 'rejectAd'])->name('revisor.ad.reject');
