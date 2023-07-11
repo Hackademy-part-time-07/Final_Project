@@ -28,9 +28,8 @@
             </div>
             @empty
             <div class="col-12">
-                <h2>pareceque no hay nada de esta categoría</h2>
-                <a href="{{ route('ads.create') }}" class="btn btn-success">Vende tu primer objeto</a> o <a href="{{ route('home') }}" class="btn btn-primary">Vuelve a la Home</a>
-            </div>
+                <h2>Pareceque no hay ningun anuncio</h2>
+                <a href="{{ route('ads.create') }}" class="btn btn-success">Vende tu primer objeto</a>
             @endforelse
         </div>
     </div>

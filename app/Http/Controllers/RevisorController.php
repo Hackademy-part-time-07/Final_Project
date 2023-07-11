@@ -31,6 +31,10 @@ class RevisorController extends Controller
         return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Ya tenemos un compañero más']);
     }
 
+    public function refuseRevisor () {
+        return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Tu solicitud a sido rechazada']);
+    }
+
 
     public function index(){
         $ad = Ad::where('is_accepted', null)

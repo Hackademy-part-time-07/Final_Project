@@ -13,6 +13,7 @@
         <p><b>Nombre:</b>{{ $user->name }}</p>
         <p>Si quieres que haga parte de nuestro equipo pulse aquí</p>
         <a class="btn btn-success" href="{{ route('revisor.make', $user) }}">Acepta la solicitud</a>
+        <a class="btn btn-danger" href="{{ route('revisor.refuse') }}">Rechazar la solicitud</a>
     </div>
 </body>
 </html>
