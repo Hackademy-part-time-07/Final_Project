@@ -33,7 +33,7 @@ Route::patch('/revisor/ad/{ad}/reject', [RevisorController::class, 'rejectAd'])-
 
 Route::get('/ads/{ad}', [AdController::class,'show'])->name("ads.show");
 
-
-
 Route::get('/category/{category:name}/ads', [PublicController::class, 'adsByCategory'])->name('category.ads');
+
+Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set');
 
