@@ -7,7 +7,7 @@
                     <div class="card-header">
                         {{__('Nuevo anuncio') }}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body nuevoAnuncio">
                         <livewire:create-ad />
                     </div>
                 </div>

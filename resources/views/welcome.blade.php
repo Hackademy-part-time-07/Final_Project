@@ -3,8 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+<<<<<<< HEAD
+                <h1>{{__('Últimos anuncios') }}</h1>
+=======
                 <h1>{{__('messages.welcome')}}</h1>
                 <h1>Últimos anuncios</h1>
+>>>>>>> f6636e05bf4846d957a16b02094ac4803df8e148
             </div>
         </div>
         <div class="row">
@@ -14,10 +18,10 @@
                     <img src="https://via.placeholder.com/150" alt="..." class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}</h6>
+                        <h6 class="card-subtitle mb-2">{{ $ad->price }}</h6>
                         <p class="card-text">{{ $ad->body }}</p>
                         <div class="card-subtitle mb-2">
-                            <strong><a href="{{ route('category.ads', $ad->category) }}">#{{ $ad->category->name }}</a></strong>
+                            <strong><a href="{{ route('category.ads', $ad->category) }}">{{ $ad->category->name }}</a></strong>
                             <i>{{ $ad->created_at->format('d/m/Y') }}</i>
                         </div>
                         <div class="card-subtitle mb-2">
