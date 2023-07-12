@@ -8,7 +8,7 @@
             <div class="navbar-nav">
                 <ul>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu  navCategorias" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a></li>
                             @endforeach
@@ -17,7 +17,7 @@
                 </ul>
             </div>
         </div>
-        <a class="btn btn-success mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
+        <a class="btn btn-success text-black mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
         <div class="d-flex">
         @guest
             @if (Route::has('login'))
@@ -32,7 +32,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} 
                     </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <ul class="dropdown-menu navRevisor" aria-labelledby="navbarDropdown">
                     @if (Auth::user()->is_revisor)
                         <li>
                             <a href="{{ route('revisor.home') }}" class="dropdow-item">
