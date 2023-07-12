@@ -3,6 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <h1>{{__('messages.welcome')}}</h1>
                 <h1>Últimos anuncios</h1>
             </div>
         </div>
@@ -30,6 +31,7 @@
             <div class="col-12">
                 <h2>{{__('Parece que no hay ningun anuncio') }}</h2>
                 <a href="{{ route('ads.create') }}" class="btn btn-success">{{__('Vende tu primer objeto') }}</a>
+            
             @endforelse
         </div>
     </div>
