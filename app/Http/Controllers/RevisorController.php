@@ -32,7 +32,7 @@ class RevisorController extends Controller
     }
 
     public function refuseRevisor () {
-        return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Tu solicitud a sido rechazada']);
+        return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Tu solicitud ha sido rechazada']);
     }
 
 

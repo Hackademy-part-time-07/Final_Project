@@ -6,11 +6,15 @@
     --secondary:rgb(83, 33, 33);
 }
 
-h1{
+h1, h2{
     text-align: center;
     margin-bottom: 3rem;
+    color: var(--secondary);
+    text-shadow: 1px 1px 1px #000000;
 }
 
+
+/********* Barra de navegación*********/
 .barraNav{
     background-color: var(--primary);
     box-shadow: 1px 10px 5px 0px rgba(0, 0, 0, 0.404);
@@ -26,13 +30,40 @@ h1{
     top: 1vh;
 }
 
-ul{
-    list-style-type: none
+.navCategorias{
+    background-color: var(--secondary);
+    text-align: center;
 }
 
+.navCategorias a{
+    color: rgb(122, 121, 121);
+}
+
+ul{
+    list-style-type: none;
+}
+
+.navRevisor{
+    background-color: var(--secondary);
+    text-align: center;
+}
+
+.navRevisor a{
+    color: white;
+}
+
+
+
+/*************Anuncios**********/
 .anuncios{
     box-shadow: 6px 7px 23px 0px rgba(0, 0, 0, 0.633);
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
+    text-align: center;
+    width: 20rem;
+}
+
+.anuncios img{
+    height: 18rem;
 }
 
 .anuncios:hover{
@@ -41,7 +72,24 @@ ul{
     color: white;
 }
 
+.anuncios .mostrarMas{
+    transition: all 0.7s ease;
+}
 
+.anuncios:hover .mostrarMas{
+    background-color: white;
+    color: var(--primary);
+}
+
+
+/************Formularios************/
+.formularios{
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+/*************Footer**************/
 .piedepagina{
     background-color: var(--primary);
 }
