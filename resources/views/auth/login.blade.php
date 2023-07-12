@@ -2,7 +2,7 @@
     <x-slot name="title">Metapop - {{__('Iniciar sesión') }}</x-slot>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-6 offset-md-3">
+            <div class="col-12 col-md-3 offset-md-3 ">
 
                 <h2 class="form-title space-around">{{__('Iniciar sesión') }}</h2>
 

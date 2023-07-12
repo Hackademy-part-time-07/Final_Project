@@ -52,7 +52,7 @@
                 </ul>
             </ul>
         @endguest
-            <div class="d-flex">
+            <div class="d-flex align-items-center">
                 <x-locale lang="en" country="gb"/>
                 <x-locale lang="it" country="it"/>
                 <x-locale lang="es" country="es"/>
