@@ -3,12 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-<<<<<<< HEAD
                 <h1>{{__('Últimos anuncios') }}</h1>
-=======
-                <h1>{{__('messages.welcome')}}</h1>
-                <h1>Últimos anuncios</h1>
->>>>>>> f6636e05bf4846d957a16b02094ac4803df8e148
             </div>
         </div>
         <div class="row">

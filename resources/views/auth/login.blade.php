@@ -16,7 +16,7 @@
                 </div>
                 @endif
 
-                <form action="/login" method="POST" role="form" class="form-control">
+                <form action="/login" method="POST" role="form" class="form-control formularios">
                     @csrf
                     <div class="space-around my-2">
                         <input type="email" name="email" id="email" class="form-control forms_field-input" placeholder="{{__('Tu correo') }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars">

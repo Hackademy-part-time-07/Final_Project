@@ -6,7 +6,7 @@
     --secondary:rgb(83, 33, 33);
 }
 
-h1{
+h1, h2{
     text-align: center;
     margin-bottom: 3rem;
     color: var(--secondary);
@@ -82,9 +82,10 @@ ul{
 }
 
 /************Formularios************/
-.nuevoAnuncio{
-    background-color: var(--secondary);
+.formularios{
+    background-color: var(--primary);
     color: white;
+    text-align: center;
 }
 
 /*************Footer**************/

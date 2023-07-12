@@ -4,10 +4,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header fs-4 formularios">
                         {{__('Nuevo anuncio') }}
                     </div>
-                    <div class="card-body nuevoAnuncio">
+                    <div class="card-body formularios">
                         <livewire:create-ad />
                     </div>
                 </div>

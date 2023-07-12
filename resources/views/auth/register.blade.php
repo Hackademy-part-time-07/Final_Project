@@ -16,7 +16,7 @@
                 @endif
 
                 <!--FORM FIELDS-->
-                <form action="/register" method="POST" role="form" class="form-control">
+                <form action="/register" method="POST" role="form" class="form-control formularios">
                     @csrf
                     <!--Name-->
                     <div class="space-around my-2">
@@ -43,7 +43,7 @@
 
                     </div>
                     <!-- Button-Register-->
-                    <button type="submit" class="btn btm-info">
+                    <button type="submit" class="btn btn-info">
                         {{__('Crear cuenta') }}
                     </button>
                 </form>
