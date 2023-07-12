@@ -22,14 +22,14 @@
                         <div class="card-subtitle mb-2">
                             <small>{{ $ad->user->name }}</small>
                         </div>
-                        <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary">Mostrar Más</a>
+                        <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary">{{__('Mostrar Más') }}</a>
                     </div>
                 </div>
             </div>
             @empty
             <div class="col-12">
-                <h2>Pareceque no hay ningun anuncio</h2>
-                <a href="{{ route('ads.create') }}" class="btn btn-success">Vende tu primer objeto</a>
+                <h2>{{__('Parece que no hay ningun anuncio') }}</h2>
+                <a href="{{ route('ads.create') }}" class="btn btn-success">{{__('Vende tu primer objeto') }}</a>
             @endforelse
         </div>
     </div>
