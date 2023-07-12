@@ -72,14 +72,15 @@ ul{
     color: white;
 }
 
-.anuncios a{
+.anuncios .mostrarMas{
     transition: all 0.7s ease;
 }
 
-.anuncios:hover a{
+.anuncios:hover .mostrarMas{
     background-color: white;
     color: var(--primary);
 }
+
 
 /************Formularios************/
 .formularios{
