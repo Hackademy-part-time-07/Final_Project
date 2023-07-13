@@ -67,4 +67,22 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isRevisor'=>\App\Http\Middleware\IsRevisor::class,
     ];
+
+	/**
+	 * 
+	 * @return array<string, array<int, class-string|string>>
+	 */
+	public function getMiddlewareGroups() {
+		return $this->middlewareGroups;
+	}
+	
+	/**
+	 * 
+	 * @param array<string, array<int, class-string|string>> $middlewareGroups 
+	 * @return self
+	 */
+	public function setMiddlewareGroups($middlewareGroups): self {
+		$this->middlewareGroups = $middlewareGroups;
+		return $this;
+	}
 }
