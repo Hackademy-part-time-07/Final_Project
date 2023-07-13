@@ -9,7 +9,7 @@
         <div class="row">
             @forelse ($ads as $ad)
             <div class="col-12 col-md-4">
-                <div class="card mb-5">
+                <div class="card mb-5 anuncios">
                     <img src="https://via.placeholder.com/150" alt="..." class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
@@ -22,7 +22,7 @@
                         <div class="card-subtitle mb-2">
                             <small>{{ $ad->user->name }}</small>
                         </div>
-                        <a href="" class="btn btn-primary">{{__('Mostrar Más') }}</a>
+                        <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary mostrarMas">{{__('Mostrar Más') }}</a>
                     </div>
                 </div>
             </div>

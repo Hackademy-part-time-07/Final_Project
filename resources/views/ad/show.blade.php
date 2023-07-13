@@ -1,6 +1,6 @@
 <x-layout>
     <div class="container">
-        <div class="row my-5">
+        <div class="d-flex justify-content-center my-5">
             <div class="col-12 col-md-6">
 
                     <div id="adImages" class="carousel slide" data-bs-ride="true">
@@ -36,12 +36,12 @@
                         </button>
                     </div>
                 
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-md-6 descripcionShow">
                     <div><b>{{__('Título') }}: </b>{{ $ad->title }}</div>
                     <div><b>{{__('Precio') }}: </b>{{ $ad->price }}</div>
                     <div><b>{{__('Descripción') }}: </b>{{ $ad->body }}</div>
                     <div><b>{{__('Publicado el') }}: </b>{{ $ad->created_at->format('d/m/Y') }}</div>
-                    <div><b>{{__('Por') }}:</b>{{ $ad->user->name}}</div>
+                    <div><b>{{__('Por') }}: </b>{{ $ad->user->name}}</div>
                     <div><a class="category-tag" href="{{ route('category.ads', $ad->category) }}" >#{{ $ad->category->name }}</a></div>
                     {{-- <div><a href="#" class="btn btn-success">Comprar</a></div> --}}
                 </div>
