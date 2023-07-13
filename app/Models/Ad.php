@@ -33,4 +33,5 @@ class Ad extends Model
     static public function ToBeRevisionedCount() {
         return Ad::where('is_accepted', null)->count();
     }
+
 }

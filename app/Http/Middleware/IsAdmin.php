@@ -6,22 +6,20 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
-use App\Http\Middleware\AdminMiddleware;
 
-class IsRevisor
+class IsAdmin
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->is_revisor){
+        if (Auth::check() && Auth::user()->is_admin){
             return $next($request);
         }else{
-            return redirect()->route('home')->withMessage(['type'=> 'danger', 'text'=> 'Acceso denegado, no eres un revisor, pregunta al administrador']);
+            return redirect()->route('home')->withMessage(['type'=> 'danger', 'text'=> 'Acceso denegado, no eres administrador']);
         }
-        
     }
 }

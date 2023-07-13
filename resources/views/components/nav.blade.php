@@ -33,6 +33,16 @@
                         {{ Auth::user()->name }} 
                     </a>
                 <ul class="dropdown-menu navRevisor" aria-labelledby="navbarDropdown">
+                    @if (Auth::user()->is_admin)
+                        <li>
+                            <a href="{{ route('admin.home') }}" class="dropdow-item">
+                                {{__('Administrador') }}
+                                <span class="badge rounded-pill bg-danger">
+                                    {{ \App\Models\Ad::ToBeRevisionedCount() }}
+                                </span>
+                            </a>
+                        </li>
+                    @endif
                     @if (Auth::user()->is_revisor)
                         <li>
                             <a href="{{ route('revisor.home') }}" class="dropdow-item">

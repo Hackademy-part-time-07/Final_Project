@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'isRevisor'=>\App\Http\Middleware\IsRevisor::class,
+        'isAdmin' => \App\Http\Middleware\IsAdmin::class,
     ];
 
 	/**
@@ -83,6 +84,30 @@ class Kernel extends HttpKernel
 	 */
 	public function setMiddlewareGroups($middlewareGroups): self {
 		$this->middlewareGroups = $middlewareGroups;
+		return $this;
+	}
+
+	/**
+	 * The application's middleware aliases.
+	 * 
+	 * Aliases may be used instead of class names to conveniently assign middleware to routes and groups.
+	 * 
+	 * @return array<string, class-string|string>
+	 */
+	public function getMiddlewareAliases() {
+		return $this->middlewareAliases;
+	}
+	
+	/**
+	 * The application's middleware aliases.
+	 * 
+	 * Aliases may be used instead of class names to conveniently assign middleware to routes and groups.
+	 * 
+	 * @param array<string, class-string|string> $middlewareAliases The application's middleware aliases.
+	 * @return self
+	 */
+	public function setMiddlewareAliases($middlewareAliases): self {
+		$this->middlewareAliases = $middlewareAliases;
 		return $this;
 	}
 }
