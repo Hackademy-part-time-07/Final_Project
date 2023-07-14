@@ -86,6 +86,6 @@
         </div>
     </div>
     @else
-    <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias') }}</h3>
+    <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias.') }}</h3>
     @endif
 </x-layout>

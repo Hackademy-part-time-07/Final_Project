@@ -10,7 +10,7 @@
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
                         <ul class="dropdown-menu  navCategorias" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ __($category->name) }}</a></li>
                             @endforeach
                         </ul>
                     </li>
