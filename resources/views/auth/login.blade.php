@@ -23,7 +23,7 @@
                         <div class="validate"></div>
                     </div>
                     <div class="space-around my-2">
-                        <input type="password" name="password" id="password" class="form-control forms-field-input" placeholder="{{__('Tu contrseña') }}">
+                        <input type="password" name="password" id="password" class="form-control forms-field-input" placeholder="{{__('Tu contraseña') }}">
                         <div class="validate"></div>
                     </div>
                     <button type="submit" class="btn btn-info">

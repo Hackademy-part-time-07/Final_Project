@@ -36,7 +36,7 @@ class CreateAd extends Component
             'price'=>$this->price
         ]);
         Auth::user()->ad()->save($ad);
-        session()->flash('message', 'Anuncio creado con éxito');
+        session()->flash('message', __('Anuncio creado con éxito'));
         $this->cleanForm();
     }
 
