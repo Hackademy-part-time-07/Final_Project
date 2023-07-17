@@ -26,8 +26,6 @@
 "Descripción": "Description",
 "Categoría": "Category",
 "Seleccionar Categoría": "Select Category",
-"Últimos anuncios": "Last news",
-"Crear anuncio": "Create ads",
 "Crear": "Create",
 "Publicado el": "Published at",
 "Por": "By",
@@ -60,5 +58,7 @@
 "Ya tenemos un compañero más": "We already have one more partner",
 "Solicitud enviada con éxito, pronto sabrás algo, gracias!": "Request sent successfully, you will hear soon, thank you!",
 "Ya eres revisor!": "You are already a reviewer!",
-"No hay anuncios para revisar, vuelve más tarde, gracias.": "No advertisement to review, check back later, thank you."
+"No hay anuncios para revisar, vuelve más tarde, gracias.": "No advertisement to review, check back later, thank you.",
+"Imágenes": "Images",
+"No hay imágenes": "No images"
 }
