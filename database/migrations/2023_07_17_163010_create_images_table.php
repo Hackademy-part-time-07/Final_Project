@@ -18,6 +18,7 @@ return new class extends Migration
                     ->references('id')
                     ->on('ads')
                     ->onDelete('cascade');
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

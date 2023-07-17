@@ -8,6 +8,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 
 
+
 class CreateAd extends Component
 {
     use WithFileUploads;
@@ -20,7 +21,7 @@ class CreateAd extends Component
     public $image;
 
     protected $rules = [
-        'title'=>'rquired|min:4',
+        'title'=>'required|min:4',
         'body'=>'required|min:8',
         'category'=>'required',
         'price'=>'required|numeric'
@@ -37,27 +38,10 @@ class CreateAd extends Component
         'images.max' => 'La imagen es demasiado grande',
     ];
 
-    public function updatedTemporaryImages(){
-        if ($this->validate(['temporary_images.*'=>'image|max:2048'])){
-            foreach($this-> temporary_images as $image){
-                $this->images[] = $image;
-            }
-        }
-    }
-    public function removeImage($key){
-        if(in_array($key, array_keys($this->images))){
-            unset($this->images[$key]);
-        }
-    }
-
     public function store () {
-        $validatedData= $this->validate();
+        $validatedData = $this->validate();
         $category = Category::find($this->category);
-        $ad = $category->ads($validatedData)->create([
-            'title'=>$this->title,
-            'body'=>$this->body,
-            'price'=>$this->price
-        ]);
+        $ad = $category->ads()->create($validatedData);
         Auth::user()->ads()->save($ad);
         if (count($this->images)) {
             foreach($this->images as $image){
@@ -70,6 +54,18 @@ class CreateAd extends Component
 
     public function update($propertyName) {
         $this->validateOnly($propertyName);
+    }
+    public function updatedTemporaryImages(){
+        if ($this->validate(['temporary_images.*'=>'image|max:2048'])){
+            foreach($this-> temporary_images as $image){
+                $this->images[] = $image;
+            }
+        }
+    }
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
     }
 
     public function cleanForm() {

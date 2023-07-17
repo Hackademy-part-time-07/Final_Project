@@ -38,5 +38,4 @@
             @endforelse
         </div>
     </div>
-    
 </x-layout>
