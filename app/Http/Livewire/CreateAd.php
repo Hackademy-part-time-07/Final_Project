@@ -3,17 +3,21 @@
 namespace App\Http\Livewire;
 use App\Models\Ad;
 use App\Models\Category;
-
-
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+
 
 class CreateAd extends Component
 {
+    use WithFileUploads;
     public $title;
     public $body;
     public $price;
     public $category;
+    public $images= [];
+    public $temporary_images;
+    public $image;
 
     protected $rules = [
         'title'=>'rquired|min:4',
@@ -25,17 +29,41 @@ class CreateAd extends Component
     protected $messages = [
         'required'=>'Field :attribute is required, please fill it',
         'min'=>'Field :attribute should be longer than :min',
-        'numeric'=>'Field :attribute must be a number'
+        'numeric'=>'Field :attribute must be a number',
+        'temporary_images.required' => 'La imagen es obligatoria',
+        'temporary_images.*.image' => 'Los archivos tienen que ser imagenes',
+        'temporary_images.*.mas' => 'La imagen es demasiado grande',
+        'images.image' => 'El archivo tiene que ser una imagen',
+        'images.max' => 'La imagen es demasiado grande',
     ];
 
+    public function updatedTemporaryImages(){
+        if ($this->validate(['temporary_images.*'=>'image|max:2048'])){
+            foreach($this-> temporary_images as $image){
+                $this->images[] = $image;
+            }
+        }
+    }
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
+
     public function store () {
+        $validatedData= $this->validate();
         $category = Category::find($this->category);
-        $ad = $category->ads()->create([
+        $ad = $category->ads($validatedData)->create([
             'title'=>$this->title,
             'body'=>$this->body,
             'price'=>$this->price
         ]);
-        Auth::user()->ad()->save($ad);
+        Auth::user()->ads()->save($ad);
+        if (count($this->images)) {
+            foreach($this->images as $image){
+                $ad->images()->create(['path'=>$image->store("images/$ad->id", 'public')]);
+            }
+        }
         session()->flash('message', __('Anuncio creado con éxito'));
         $this->cleanForm();
     }
