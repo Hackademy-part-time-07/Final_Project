@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'index'])->name('home');
 
-Route::midlleware(['isAdmin'])->group(function(){
+Route::middleware(['isAdmin'])->group(function(){
     Route::get('/admin', [AdminController::class, 'index'])->middleware('isAdmin')->name('admin.home');
     Route::patch('/admin/ad/{ad}/accept', [AdminController::class, 'acceptAd'])->middleware('isAdmin')->name('admin.ad.accept');
     Route::patch('/admin/ad/{ad}/reject', [AdminController::class, 'rejectAd'])->middleware('isAdmin')->name('admin.ad.reject');
