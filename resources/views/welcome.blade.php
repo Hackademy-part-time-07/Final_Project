@@ -11,7 +11,7 @@
             <div class="col-12 col-md-4">
                 <div class="card mb-5 anuncios">
                     @if ($ad->images()->count() > 0)
-                        <img src="{{ Storage::url($ad->images()->first()->path) }}" class="card-img-top" alt="...">
+                        <img src="{{ $ad->images()->first()->getUrl(400,300) }}" class="card-img-top" alt="...">
                     @else
                         <img src="https://via.placeholder.com/150" alt="..." class="card-img-top">
                     @endif
