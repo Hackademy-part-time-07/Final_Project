@@ -4,12 +4,13 @@
 :root{
     --primary: rgb(149, 83, 83);
     --secondary:rgb(83, 33, 33);
+    --black: rgb (00,00,00);
 }
 
 h1, h2{
-    text-align: center;
+    text-align: left;
     margin-bottom: 3rem;
-    color: var(--secondary);
+    color: var(--black);
     text-shadow: 1px 1px 1px #000000;
 }
 

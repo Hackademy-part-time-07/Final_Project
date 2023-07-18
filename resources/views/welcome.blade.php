@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>{{__('Últimos anuncios') }}</h1>
+                <h1>{{__('Estas son las últimas novedades:') }}</h1>
             </div>
         </div>
         <div class="row">
