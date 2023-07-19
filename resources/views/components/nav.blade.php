@@ -10,7 +10,7 @@
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
                         <ul class="dropdown-menu  navCategorias" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ $category->name }}</a></li>
+                                <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ __($category->name) }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -33,6 +33,16 @@
                         {{ Auth::user()->name }} 
                     </a>
                 <ul class="dropdown-menu navRevisor" aria-labelledby="navbarDropdown">
+                    @if (Auth::user()->is_admin)
+                        <li>
+                            <a href="{{ route('admin.home') }}" class="dropdow-item">
+                                {{__('Administrador') }}
+                                <span class="badge rounded-pill bg-danger">
+                                    {{ \App\Models\Ad::ToBeRevisionedCount() }}
+                                </span>
+                            </a>
+                        </li>
+                    @endif
                     @if (Auth::user()->is_revisor)
                         <li>
                             <a href="{{ route('revisor.home') }}" class="dropdow-item">

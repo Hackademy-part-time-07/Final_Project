@@ -8,25 +8,6 @@
                     <div class="card-header">
                         {{__('Anuncio') }} {{ $ad->id }}
                     </div>
-                    <div class="row">
-                        <div class="col-md-3">
-                            <b>{{ __('Imágenes') }}</b>
-                        </div>
-                        <div class="col-9">
-                            <div class="row">
-                                @forelse ($ad->images as $image )
-                                    <div class="col md-4">
-                                        <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="...">
-                                    </div>
-                                @empty
-                                    <div class="col 12">
-                                        <b>{{ __('No hay imágenes') }}</b>
-                                    </div>
-                                @endforelse
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3">
@@ -105,6 +86,57 @@
         </div>
     </div>
     @else
-    <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias.') }}</h3>
+    <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias') }}</h3>
     @endif
 </x-layout>
+
+
+
+
+
+
+
+
+
+{{-- @extends('layouts.app')
+
+@section('content')
+    <h1>Administrar usuarios</h1>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($users as $user)
+                <tr>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ $user->roles->first()->name }}</td>
+                    <td>
+                        <form action="{{ route('admin.assignRole', $user->id) }}" method="POST">
+                            @csrf
+                            <select name="role_id">
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                            <button type="submit">Asignar rol</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection --}}

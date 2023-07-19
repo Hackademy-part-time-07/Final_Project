@@ -19,20 +19,20 @@ class RevisorController extends Controller
 
     public function becomeRevisor(){
         if (Auth::user()->is_revisor) {
-            return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Ya eres revisor!']);
+            return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> __('Ya eres revisor!')]);
         } else {
             Mail::to('metapop@hotmail.com')->send(new BecomeRevisor(Auth::user()));
-        return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Solicitud enviada con éxito, pronto sabrás algo, gracias!']);
+        return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> __('Solicitud enviada con éxito, pronto sabrás algo, gracias!')]);
         }
     }
 
     public function makeRevisor(User $user){
         Artisan::call('metapop:makeUserRevisor', ['email'=>$user->email]);
-        return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> 'Ya tenemos un compañero más']);
+        return redirect()->route('home')->withMessage(['type'=>'success', 'text'=> __('Ya tenemos un compañero más')]);
     }
 
     public function refuseRevisor () {
-        return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> 'Tu solicitud ha sido rechazada']);
+        return redirect()->route('home')->withMessage(['type'=>'danger', 'text'=> __('Tu solicitud ha sido rechazada')]);
     }
 
 
@@ -46,13 +46,14 @@ class RevisorController extends Controller
     public function acceptAd (Ad $ad) {
         $ad->setAccepted(true);
         $ad->save();
-        return redirect()->back()->withMessage(['type'=>'success', 'text'=>'Anuncio aceptado']);
+        return redirect()->back()->withMessage(['type'=>'success', 'text'=>__('Anuncio aceptado')]);
     }
+
 
     public function rejectAd (Ad $ad) {
         $ad->setAccepted(false);
         $ad->save();
-        return redirect()->back()->withMessage(['type'=>'danger', 'text'=>'Anuncio rechazado']);
+        return redirect()->back()->withMessage(['type'=>'danger', 'text'=>__('Anuncio rechazado')]);
     }
 }
 

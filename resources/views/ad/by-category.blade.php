@@ -9,8 +9,12 @@
         <div class="row">
             @forelse ($ads as $ad)
             <div class="col-12 col-md-4">
-                <div class="card mb-5">
-                    <img src="https://via.placeholder.com/150" alt="..." class="card-img-top">
+                <div class="card mb-5 anuncios">
+                    @if ($ad->images()->count() > 0)
+                        <img src="{{ Storage::url($ad->images()->first()->path) }}" class="card-img-top" alt="...">
+                    @else
+                        <img src="{{ !$ad->images()->get()->isEmpty() ? $ad->images()->first()->getUrl(400,300) : 'https://via.placeholder.com/150' }}" alt="..." class="card-img-top">
+                    @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ $ad->price }}</h6>
@@ -22,7 +26,7 @@
                         <div class="card-subtitle mb-2">
                             <small>{{ $ad->user->name }}</small>
                         </div>
-                        <a href="" class="btn btn-primary">{{__('Mostrar Más') }}</a>
+                        <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary mostrarMas">{{__('Mostrar Más') }}</a>
                     </div>
                 </div>
             </div>

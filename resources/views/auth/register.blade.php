@@ -1,8 +1,8 @@
 <x-layout>
     <!--Register-->
     <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-6 offset-md-3">
+    <div class="d-flex justify-content-center">
+        <div class="Sesion col-9 col-md-4 col-lg-3 row text-center">
                 <!--FORM TITLE-->
                     <h2 class="form-title space-around">{{__('Crear cuenta') }}</h2>
                 @if ($errors->any())
