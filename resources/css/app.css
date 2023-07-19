@@ -36,7 +36,12 @@ h1, h2{
 }
 
 .navCategorias a{
-    color: rgb(122, 121, 121);
+    color: rgb(255, 255, 255);
+}
+
+.navCategorias a:hover{
+    color: var(--secondary);
+    font-weight: bold;
 }
 
 ul{
