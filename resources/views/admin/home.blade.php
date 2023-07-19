@@ -1,6 +1,6 @@
 <x-layout>
     {{-- <x-slot name = 'title'>Revisor Home</x-slot> --}}
-
+    <h1>Administrar anuncios</h1>
     @if ($ad)
     <div class="container my-5 py-5">
         <div class="row">
@@ -93,20 +93,21 @@
     <h1>Administrar usuarios y revisores</h1>
 
 <h2>Usuarios y Revisores</h2>
-<ul>
+<ul class="row text-center">
     @foreach ($users as $user)
-        <li>
+        <li class="my-3">
             {{ $user->name }} - {{ $user->email }}
             @if ($reviewers->contains('id', $user->id))
                 (Revisor)
                 <form action="{{ route('admin.users.remove_reviewer', $user->id) }}" method="POST">
                     @csrf
-                    <button type="submit">Quitar Revisor</button>
+                    <button class="my-2 btnAdm" type="submit">Quitar Revisor</button>
                 </form>
             @else
+                (Usuario)
                 <form action="{{ route('admin.users.assign_reviewer', $user->id) }}" method="POST">
                     @csrf
-                    <button type="submit">Asignar Revisor</button>
+                    <button class="my-2 btnAdm" type="submit">Asignar Revisor</button>
                 </form>
             @endif
         </li>

@@ -36,26 +36,20 @@ class AdminController extends Controller
     // }
     public function assignReviewer(Request $request, User $user)
 {
-    // Obtener el rol de revisor por nombre
     $revisorRole = Role::where('name', 'revisor')->first();
-
-    // Verificar si el rol existe antes de obtener su ID
     if ($revisorRole) {
-        // Obtener el ID del rol de revisor
         $revisorRoleID = $revisorRole->id;
-
-        // Verificar si el usuario ya tiene el rol de revisor
         if (!$user->roles->contains($revisorRoleID)) {
-            // Si no tiene el rol, se le asigna utilizando el método attach
             $user->roles()->attach($revisorRoleID);
-
-            return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Rol de Revisor asignado correctamente']);
+            return redirect()->back()->withMessage(['type' => 'success', 
+                                                    'text' => 'Rol de Revisor asignado correctamente']);
         } else {
-            return redirect()->back()->withMessage(['type' => 'warning', 'text' => 'El usuario ya tiene el rol de Revisor']);
+            return redirect()->back()->withMessage(['type' => 'warning', 
+                                                    'text' => 'El usuario ya tiene el rol de Revisor']);
         }
     } else {
-        // Si no se encontró el rol de revisor, mostrar un mensaje de error
-        return redirect()->back()->withMessage(['type' => 'error', 'text' => 'El rol de Revisor no está definido']);
+        return redirect()->back()->withMessage(['type' => 'error', 
+                                                'text' => 'El rol de Revisor no está definido']);
     }
 }
 

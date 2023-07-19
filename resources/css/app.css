@@ -90,6 +90,21 @@ ul{
 }
 
 
+/************Administrador**********/
+
+.btnAdm{
+    border-radius: 0.8rem;
+    background-color: var(--primary);
+    color: white;
+    transition: all 0.7s ease;
+}
+
+.btnAdm:hover{
+    background-color: var(--secondary);
+    font-size: 1.1rem;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.971);
+}
+
 
 /*************Footer**************/
 .piedepagina{
