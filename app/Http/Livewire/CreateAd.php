@@ -6,7 +6,7 @@ use App\Jobs\ResizeImage;
 use App\Models\Ad;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\File;
+use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -80,6 +80,8 @@ class CreateAd extends Component
         $this->body = "";
         $this->category="";
         $this->price = "";
+        $this->images = [];
+
 
     }
 
