@@ -1,11 +1,17 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~flag-icon-css/css/flag-icons';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Oswald:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@100&display=swap');
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
 
 :root{
     --primary: rgb(149, 83, 83);
     --secondary:rgb(83, 33, 33);
     --black: rgb(00,00,00);
     --white: rgb(254, 254, 254);
+    
 }
 
 h1, h2{
@@ -19,8 +25,7 @@ h1, h2{
 /********* Barra de navegación*********/
 .barraNav{
     background-color: var(--white);
-    box-shadow: 1px 5px 5px 0px rgba(83, 33, 33);
-    border-bottom: 10px solid;
+    border-bottom: 5px solid;
     border-color: var(--secondary)
 }
 
@@ -61,6 +66,10 @@ ul{
     color: white;
 }
 
+.crearAnuncio{
+background-color: var( --secondary);
+
+}
 
 
 /*************Anuncios**********/
