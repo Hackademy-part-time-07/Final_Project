@@ -39,7 +39,7 @@
             
         </div>
     </div>
-    <div>
+    <div class="d-flex justify-content-center d-sm-block mx-5">
     {{$ads->links()}}
     </div>
 </x-layout>
