@@ -36,7 +36,12 @@ h1, h2{
 }
 
 .navCategorias a{
-    color: rgb(122, 121, 121);
+    color: rgb(255, 255, 255);
+}
+
+.navCategorias a:hover{
+    color: var(--secondary);
+    font-weight: bold;
 }
 
 ul{
@@ -89,6 +94,21 @@ ul{
     text-align: center;
 }
 
+
+/************Administrador**********/
+
+.btnAdm{
+    border-radius: 0.8rem;
+    background-color: var(--primary);
+    color: white;
+    transition: all 0.7s ease;
+}
+
+.btnAdm:hover{
+    background-color: var(--secondary);
+    font-size: 1.1rem;
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.971);
+}
 
 
 /*************Footer**************/
