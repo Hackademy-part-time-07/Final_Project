@@ -84,6 +84,7 @@ background-color: var( --secondary);
     transition: all 0.6s ease;
     text-align: center;
     width: 20rem;
+    overflow: hidden;
 }
 
 .anuncios img{
@@ -95,6 +96,7 @@ background-color: var( --secondary);
     background-color: var(--secondary);
     color: white;
 }
+
 
 .anuncios .mostrarMas{
     transition: all 0.7s ease;
