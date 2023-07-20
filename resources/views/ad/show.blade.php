@@ -3,7 +3,7 @@
         <div class="d-flex justify-content-center my-5">
             <div class="col-12 col-md-6">
 
-                    <div id="adImages" class="carousel slide" data-bs-ride="true">
+                    <div id="adImages" class="carousel slide imagenShow" data-bs-ride="true">
                 
                         <div class="carousel-indicators">
                             @for ($i = 0; $i < $ad->images()->count(); $i++)
@@ -28,15 +28,18 @@
                         </button>
                     </div>
                 
-                <div class="col-12 col-md-6 descripcionShow">
-                    <div><b>{{__('Título') }}: </b>{{ $ad->title }}</div>
-                    <div><b>{{__('Precio') }}: </b>{{ $ad->price }}</div>
-                    <div><b>{{__('Descripción') }}: </b>{{ $ad->body }}</div>
-                    <div><b>{{__('Publicado el') }}: </b>{{ $ad->created_at->format('d/m/Y') }}</div>
-                    <div><b>{{__('Por') }}: </b>{{ $ad->user->name}}</div>
-                    <div><a class="category-tag" href="{{ route('category.ads', $ad->category) }}" >#{{ $ad->category->name }}</a></div>
-                    {{-- <div><a href="#" class="btn btn-success">Comprar</a></div> --}}
+                <div class="col-12 col-md-6 bodyShow">
+                    <div class="precioShow">{{ $ad->price }}</div>
+                    <div class="tituloShow">{{ $ad->title }}</div>
+                    <div class="descripcionShow">{{ $ad->body }}</div>
+                    <div class="showTecnic px-3">
+                        <div class="publicadoShow"><b>{{__('Publicado el') }}: </b>{{ $ad->created_at->format('d/m/Y') }}</div>
+                        <div class="Usershow"><b>{{__('Por') }}: </b>{{ $ad->user->name}}</div>
+                    
+                        <div class="categoriaShow"><a class="category-tag" href="{{ route('category.ads', $ad->category) }}" >{{ $ad->category->name }}</a></div>
+                    </div>
                 </div>
+                <div class=" d-flex justify-content-center"><a href="#" class="btn btn-success m-3 botonComprar">Comprar</a></div>
             </div>
             </div>
         </div>

@@ -24,16 +24,6 @@ class AdminController extends Controller
         return view('admin.home', compact('users','roles', 'reviewers', 'ad'));
     }
 
-    // public function assignReviewer(Request $request, User $user)
-    // {
-    //     $revisorRoleID = Role::where('name', 'revisor')->first()->id;
-    //     if (!$user->roles->contains($revisorRoleID)) {
-    //         $user->roles()->attach($revisorRoleID);
-    //         return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Rol de Revisor asignado correctamente']);
-    //     } else {
-    //         return redirect()->back()->withMessage(['type' => 'warning', 'text' => 'El usuario ya tiene el rol de Revisor']);
-    //     }
-    // }
     public function assignReviewer(Request $request, User $user)
 {
     $revisorRole = Role::where('name', 'revisor')->first();
@@ -41,6 +31,8 @@ class AdminController extends Controller
         $revisorRoleID = $revisorRole->id;
         if (!$user->roles->contains($revisorRoleID)) {
             $user->roles()->attach($revisorRoleID);
+            $user->is_revisor = true;
+            $user->save();
             return redirect()->back()->withMessage(['type' => 'success', 
                                                     'text' => 'Rol de Revisor asignado correctamente']);
         } else {
@@ -58,6 +50,8 @@ class AdminController extends Controller
 {
     $reviewerRoleID = Role::where('name', 'revisor')->first()->id;
     $user->roles()->detach($reviewerRoleID);
+    $user->is_revisor = false;
+    $user->save();
     return redirect()->back()->withMessage(['type' => 'success', 'text' => 'El usuario ya no es revisor']);
 }
 

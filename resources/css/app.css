@@ -86,6 +86,48 @@ ul{
     color: var(--primary);
 }
 
+.imagenShow{
+    border: 2px solid var(--primary);
+    border-radius: 0.3rem;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+}
+
+.bodyShow{
+    width: auto;
+    text-align: center;
+    border: 1px solid var(--primary);
+    border-radius: 0.3rem;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+}
+
+.tituloShow{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary);
+    padding-bottom: 2vh;
+}
+
+.precioShow{
+    color: rgb(56, 165, 42);
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    font-size: 1.4rem;
+    padding-right: 2vh;
+    
+}
+
+.descripcionShow{
+    padding-bottom: 3vh;
+}
+
+.showTecnic{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1vh;
+}
+
 
 /************Formularios************/
 .formularios{

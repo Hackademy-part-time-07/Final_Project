@@ -18,13 +18,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
                         <h6 class="card-subtitle mb-2">{{ $ad->price }}</h6>
-                        <p class="card-text">{{ $ad->body }}</p>
                         <div class="card-subtitle mb-2">
                             <strong><a class="categoriaCard" href="{{ route('category.ads', $ad->category) }}">{{ __($ad->category->name) }}</a></strong>
-                            <i>{{ $ad->created_at->format('d/m/Y') }}</i>
-                        </div>
-                        <div class="card-subtitle mb-2">
-                            <small>{{ $ad->user->name }}</small>
                         </div>
                         <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary mostrarMas">{{__('Mostrar Más') }}</a>
                     </div>
