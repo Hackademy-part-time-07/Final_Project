@@ -114,8 +114,10 @@ ul{
 /*************Footer**************/
 .piedepagina{
     background-color: var(--primary);
+    width: 100vw;
 }
 
 .contenedorfooter{
     margin-top: 15vh;
+    
 }

@@ -8,7 +8,7 @@
         </div>
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
                 <div class="card mb-5 anuncios">
                     @if ($ad->images()->count() > 0)
                         <img src="{{ $ad->images()->first()->getUrl(400,300) }}" class="card-img-top" alt="...">

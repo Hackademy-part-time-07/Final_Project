@@ -1,14 +1,14 @@
 <x-layout>
     <x-slot name='title'>{{ $category->name }}</x-slot> 
     <div class="container">
-        <div class="row">
-            <div class="col-12">
+        <div class="row justify-content-center">
+            <div class="col-6 col-sm-12">
                 <h1>{{__('Anuncios por categoría') }}: {{ $category->name }}</h1>
             </div>
         </div>
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <div class="card mb-5 anuncios">
                     @if ($ad->images()->count() > 0)
                         <img src="{{ Storage::url($ad->images()->first()->path) }}" class="card-img-top" alt="...">
@@ -39,5 +39,7 @@
             
         </div>
     </div>
+    <div>
     {{$ads->links()}}
+    </div>
 </x-layout>
