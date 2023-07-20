@@ -17,7 +17,7 @@
                 </ul>
             </div>
         </div>
-        <a class="btn btn-success text-black mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
+        <a class=" crearAnuncio btn btn-success text-black mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
         <div class="d-flex">
         @guest
             @if (Route::has('login'))
@@ -62,7 +62,7 @@
                 </ul>
             </ul>
         @endguest
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-left">
                 <x-locale lang="en" country="gb"/>
                 <x-locale lang="it" country="it"/>
                 <x-locale lang="es" country="es"/>
