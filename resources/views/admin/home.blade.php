@@ -1,5 +1,6 @@
 <x-layout>
     {{-- <x-slot name = 'title'>Revisor Home</x-slot> --}}
+    <h1>Administrar anuncios</h1>
     @if ($ad)
     <div class="container my-5 py-5">
         <div class="row">
@@ -10,6 +11,23 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                            <div class="col-md-3">
+                                <b>{{ __('Imágenes') }}</b>
+                            </div>
+                            <div class="col-9">
+                                <div class="row">
+                                    @forelse ($ad->images as $image )
+                                        <div class="col md-4">
+                                            <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="...">
+                                        </div>
+                                    @empty
+                                        <div class="col 12">
+                                            <b>{{ __('No hay imágenes') }}</b>
+                                        </div>
+                                    @endforelse
+                                </div>
+                            </div>
+                            <hr>
                             <div class="col-md-3">
                                 <b>{{__('Usuario') }}</b>
                             </div>
@@ -88,6 +106,31 @@
     @else
     <h3 class="text-center">{{__('No hay anuncios para revisar, vuelve más tarde, gracias') }}</h3>
     @endif
+
+    <h1>Administrar usuarios y revisores</h1>
+
+<h2>Usuarios y Revisores</h2>
+<ul class="row text-center">
+    @foreach ($users as $user)
+        <li class="my-3">
+            {{ $user->name }} - {{ $user->email }}
+            @if ($reviewers->contains('id', $user->id))
+                (Revisor)
+                <form action="{{ route('admin.users.remove_reviewer', $user->id) }}" method="POST">
+                    @csrf
+                    <button class="my-2 btnAdm" type="submit">Quitar Revisor</button>
+                </form>
+            @else
+                (Usuario)
+                <form action="{{ route('admin.users.assign_reviewer', $user->id) }}" method="POST">
+                    @csrf
+                    <button class="my-2 btnAdm" type="submit">Asignar Revisor</button>
+                </form>
+            @endif
+        </li>
+    @endforeach
+</ul>
+
 </x-layout>
 
 
@@ -98,45 +141,4 @@
 
 
 
-{{-- @extends('layouts.app')
 
-@section('content')
-    <h1>Administrar usuarios</h1>
-
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th>Acción</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->roles->first()->name }}</td>
-                    <td>
-                        <form action="{{ route('admin.assignRole', $user->id) }}" method="POST">
-                            @csrf
-                            <select name="role_id">
-                                @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
-                                @endforeach
-                            </select>
-                            <button type="submit">Asignar rol</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-@endsection --}}

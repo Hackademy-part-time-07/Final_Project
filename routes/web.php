@@ -21,8 +21,12 @@ Route::get('/', [PublicController::class, 'index'])->name('home');
 
 Route::middleware(['isAdmin'])->group(function(){
     Route::get('/admin', [AdminController::class, 'index'])->middleware('isAdmin')->name('admin.home');
-    Route::patch('/admin/ad/{ad}/accept', [AdminController::class, 'acceptAd'])->middleware('isAdmin')->name('admin.ad.accept');
-    Route::patch('/admin/ad/{ad}/reject', [AdminController::class, 'rejectAd'])->middleware('isAdmin')->name('admin.ad.reject');
+    Route::post('/admin/users/{user}/accept', [AdminController::class, 'acceptAd'])->name('admin.users.accept');
+    Route::post('/admin/users/{user}/reject', [AdminController::class, 'rejectAd'])->name('admin.users.reject');
+    Route::post('/admin/users/{user}/assign_reviewer', [AdminController::class, 'assignReviewer'])->name('admin.users.assign_reviewer');
+    Route::post('/admin/users/{user}/remove_reviewer', [AdminController::class, 'removeReviewer'])->name('admin.users.remove_reviewer');
+    Route::post('/admin/ad/{ad}/accept', [AdminController::class, 'acceptAd'])->name('admin.ad.accept');
+    Route::post('/admin/ad/{ad}/reject', [AdminController::class, 'rejectAd'])->name('admin.ad.reject');
 });
 
 
