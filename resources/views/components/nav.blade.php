@@ -17,7 +17,7 @@
                 </ul>
             </div>
         </div>
-        <a class=" crearAnuncio btn btn-success text-black mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
+        <a class=" crearAnuncio btn btn-success text-white mx-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a>
         <div class="d-flex">
         @guest
             @if (Route::has('login'))
