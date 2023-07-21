@@ -2,13 +2,13 @@
     <x-slot name='title'></x-slot>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las últimas novedades:') }}</h1>
             </div>
         </div>
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <div class="card mb-5 anuncios">
                     @if ($ad->images()->count() > 0)
                         <img src="{{ $ad->images()->first()->getUrl(400,300) }}" class="card-img-top" alt="...">
