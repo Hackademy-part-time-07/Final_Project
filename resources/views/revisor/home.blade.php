@@ -1,6 +1,6 @@
 <x-layout>
     {{-- <x-slot name = 'title'>Revisor Home</x-slot> --}}
-    <h1>Revisar anuncios</h1>
+    <h1 class="text-center">Revisar anuncios</h1>
     @if ($ad)
     <div class="container my-5 py-5">
         <div class="row">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row my-3">
+                <div class="row my-3 justify-content-end">
                     <div class="col-6">
                         <form action="{{ route('revisor.ad.accept', $ad) }}" method="POST">
                         @csrf
@@ -92,8 +92,6 @@
                         <button class="btn btn-success">{{__('Aceptar') }}</button>
                         </form>
                     </div>
-                </div>
-                <div class="row my-3">
                     <div class="col-6">
                         <form action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
                         @csrf
