@@ -68,7 +68,11 @@ ul{
 
 .crearAnuncio{
 background-color: var( --secondary);
-
+}
+.enter{
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: var(--secondary);
 }
 
 
