@@ -27,7 +27,7 @@
             @else
             <ul>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle usuario" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} 
                     </a>
                 <ul class="dropdown-menu navRevisor" aria-labelledby="navbarDropdown">

@@ -56,7 +56,7 @@ h1, h2{
 .barraNav{
     background-color: var(--white);
     border-bottom: 5px solid;
-    border-color: var(--secondary)
+    border-color: var(--secondary);
 }
 
 .logo img{
@@ -67,6 +67,11 @@ h1, h2{
 .categorias{
     position: relative;
     top: 1vh;
+}
+.usuario{
+    position: relative;
+    top: 1vh;
+    margin-right: 1vw;
 }
 
 .navCategorias{
@@ -97,7 +102,7 @@ ul{
 }
 
 .crearAnuncio{
-background-color: var( --secondary);
+    background-color: var( --secondary);
 }
 .enter{
     border: 2px solid;
@@ -129,6 +134,7 @@ background-color: var( --secondary);
 
 .anuncios .mostrarMas{
     transition: all 0.7s ease;
+    background-color: var(--primary);
 }
 
 .anuncios:hover .mostrarMas{
@@ -177,6 +183,19 @@ background-color: var( --secondary);
     justify-content: space-between;
     padding-bottom: 1vh;
 }
+
+.publicadoShow{
+    font-size: 0.6rem;
+}
+
+.userShow{
+    font-size: 0.6rem;
+}
+
+.categoriaShow{
+    font-style: oblique;
+}
+
 
 
 /************Formularios************/
