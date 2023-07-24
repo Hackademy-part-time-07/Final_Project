@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Jobs\GoogleVisionRemoveFaces;
 use App\Jobs\ResizeImage;
 use App\Models\Ad;
 use App\Models\Category;
@@ -50,6 +51,7 @@ class CreateAd extends Component
             $newFileName = "ads/$ad->id";
             foreach($this->images as $image){
                 $newImage = $ad->images()->create(['path'=>$image->store($newFileName, 'public')]);
+                dispatch(new GoogleVisionRemoveFaces($newImage->id));
                 dispatch(new ResizeImage($newImage->path, 400,400));
                 dispatch(new ResizeImage($newImage->path, 400,300));
             }
