@@ -21,10 +21,10 @@
         <div class="d-flex">
         @guest
             @if (Route::has('login'))
-                    <a class="btn btn-dark mx-3" href="{{ route('login') }}"><span>{{__('Entrar') }}</span></a>
+                    <a class=" enter btn btn-outline-secondary mx-3" href="{{ route('login') }}"><span>{{__('Entrar') }}</span></a>
             @endif
             @if (Route::has('register'))
-                    <a class="btn btn-info" href="{{ route('register') }}"><span>{{__('Registrar') }}</span></a>
+                    <a class=" register btn btn-info" href="{{ route('register') }}"><span>{{__('Registrar') }}</span></a>
             @endif
             @else
             <ul>
@@ -62,7 +62,7 @@
                 </ul>
             </ul>
         @endguest
-            <div class="d-flex align-items-left">
+            <div class="rounded-circle d-flex align-items-center">
                 <x-locale lang="en" country="gb"/>
                 <x-locale lang="it" country="it"/>
                 <x-locale lang="es" country="es"/>
