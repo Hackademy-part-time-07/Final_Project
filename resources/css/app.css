@@ -1,6 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~flag-icon-css/css/flag-icons';
+@import '~bootstrap-icons/font/bootstrap-icons';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Oswald:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@100&display=swap');
+
+
+
 
 *{
     font-family: 'Noto Sans', sans-serif;
@@ -21,10 +25,30 @@ body{
 }
 
 h1, h2{
-    text-align: left;
+    text-align: center;
     margin-bottom: 3rem;
     color: var(--black);
     text-shadow: 1px 1px 1px #000000;
+}
+
+/************Imagenes**************/
+.VERY_UNLIKELY{
+    color: greenyellow;
+}
+.UNLIKELY{
+    color: green;
+}
+.POSSIBLE{
+    color: orange;
+}
+.LIKELY{
+    color: orangered;
+}
+.VERY_LIKELY{
+    color: red;
+}
+.UNKNOWN{
+    color: grey;
 }
 
 

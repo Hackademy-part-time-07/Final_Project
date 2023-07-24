@@ -19,6 +19,24 @@
                                     <div class="col md-4">
                                         <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="...">
                                     </div>
+                                    <div class="col-md-8">
+                                        Adult : <i class="bi bi-circle-fill {{ $image->adult }}"></i>{{ $image->adult }}<br>
+                                        Spoof : <i class="bi bi-circle-fill {{ $image->spoof }}"></i>{{ $image->spoof }}<br>
+                                        Medical : <i class="bi bi-circle-fill {{ $image->medical }}"></i>{{ $image->medical }}<br>
+                                        Violence : <i class="bi bi-circle-fill {{ $image->violence }}"></i>{{ $image->violence }}<br>
+                                        Racy : <i class="bi bi-circle-fill {{ $image->racy }}"></i>{{ $image->racy }}<br>
+                                        <br><br>
+
+                                        <b>Labels</b><br>
+                                        @forelse ($image->getlabels() as $label)
+                                            <a href="#" class="btn btn-info btn-sm m1">{{ $label }}</a>
+                                            @empty
+                                            Sin etiqueta
+                                        @endforelse
+                                        id : {{ $image->id }}<br>
+                                        path : {{ $image->path }}<br>
+                                        url : {{ $image->url }}<br>
+                                    </div>
                                 @empty
                                     <div class="col 12">
                                         <b>{{ __('No hay imágenes') }}</b>
