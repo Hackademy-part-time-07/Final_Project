@@ -26,7 +26,7 @@
 
 
 
-    <x-footer/>
+
     @livewireScripts
     {{ $script ?? '' }}
     @vite(['resources/js/app.js'])
