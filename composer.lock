@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "88eaa5aea9e2d65aeefbc10a959b8b69",
-=======
     "content-hash": "9ee34860a86399d82346b312cc6dfbd8",
->>>>>>> Eloy2
     "packages": [
         {
             "name": "bacon/bacon-qr-code",

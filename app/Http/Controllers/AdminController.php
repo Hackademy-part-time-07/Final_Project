@@ -40,7 +40,8 @@ class AdminController extends Controller
             return redirect()->back()->withMessage(['type' => 'warning', 
                                                     'text' => 'El usuario ya tiene el rol de Revisor']);
         }
-    } else {
+    }
+    else {
         return redirect()->back()->withMessage(['type' => 'error', 
                                                 'text' => 'El rol de Revisor no está definido']);
     }
@@ -58,7 +59,7 @@ class AdminController extends Controller
 
 public function delete(User $user)
 {
-    if (Auth::check() && Auth::user()->is_admin && !Auth::user()->is_revisor){
+    if (Auth::check() && Auth::user()->is_admin){
         $user->delete();
         return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Usuario eliminado correctamente']);
     }else{

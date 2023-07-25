@@ -2,12 +2,9 @@
 
 namespace App\Http\Livewire;
 
-<<<<<<< HEAD
-use App\Jobs\GoogleVisionRemoveFaces;
-=======
 use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionRemoveFaces;
 use App\Jobs\GoogleVisionSafeSearchImage;
->>>>>>> 9e1701166bfcb71564ebfe4e32f2fbd9ae4d70f5
 use App\Jobs\ResizeImage;
 use App\Models\Ad;
 use App\Models\Category;
