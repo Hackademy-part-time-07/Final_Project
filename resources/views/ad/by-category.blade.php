@@ -37,4 +37,5 @@
     <div class="d-flex justify-content-center d-sm-block mx-5">
     {{$ads->links()}}
     </div>
+    @includeIf('components.footer')
 </x-layout>
