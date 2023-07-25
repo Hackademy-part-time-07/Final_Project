@@ -1,6 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~flag-icon-css/css/flag-icons';
+@import '~bootstrap-icons/font/bootstrap-icons';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Oswald:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@100&display=swap');
+
+
+
 
 *{
     font-family: 'Noto Sans', sans-serif;
@@ -21,10 +25,30 @@ body{
 }
 
 h1, h2{
-    text-align: left;
+    text-align: center;
     margin-bottom: 3rem;
     color: var(--black);
     text-shadow: 1px 1px 1px #000000;
+}
+
+/************Imagenes**************/
+.VERY_UNLIKELY{
+    color: greenyellow;
+}
+.UNLIKELY{
+    color: green;
+}
+.POSSIBLE{
+    color: orange;
+}
+.LIKELY{
+    color: orangered;
+}
+.VERY_LIKELY{
+    color: red;
+}
+.UNKNOWN{
+    color: grey;
 }
 
 
@@ -32,7 +56,7 @@ h1, h2{
 .barraNav{
     background-color: var(--white);
     border-bottom: 5px solid;
-    border-color: var(--secondary)
+    border-color: var(--secondary);
 }
 
 .logo img{
@@ -43,6 +67,11 @@ h1, h2{
 .categorias{
     position: relative;
     top: 1vh;
+}
+.usuario{
+    position: relative;
+    top: 1vh;
+    margin-right: 1vw;
 }
 
 .navCategorias{
@@ -73,7 +102,7 @@ ul{
 }
 
 .crearAnuncio{
-background-color: var( --secondary);
+    background-color: var( --secondary);
 }
 .enter{
     border: 2px solid;
@@ -105,6 +134,7 @@ background-color: var( --secondary);
 
 .anuncios .mostrarMas{
     transition: all 0.7s ease;
+    background-color: var(--primary);
 }
 
 .anuncios:hover .mostrarMas{
@@ -153,6 +183,19 @@ background-color: var( --secondary);
     justify-content: space-between;
     padding-bottom: 1vh;
 }
+
+.publicadoShow{
+    font-size: 0.6rem;
+}
+
+.userShow{
+    font-size: 0.6rem;
+}
+
+.categoriaShow{
+    font-style: oblique;
+}
+
 
 
 /************Formularios************/

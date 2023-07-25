@@ -17,9 +17,9 @@
                     @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
-                        <h6 class="card-subtitle mb-2">{{ $ad->price }}</h6>
+                        <h6 class="card-subtitle mb-2">{{ is_float($ad->price) ? number_format($ad->price, 2) : number_format($ad->price) }}€</h6>
                         <div class="card-subtitle mb-2">
-                            <strong><a class="categoriaCard" href="{{ route('category.ads', $ad->category) }}">{{ __($ad->category->name) }}</a></strong>
+                            <strong><a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $ad->category) }}">{{ __($ad->category->name) }}</a></strong>
                         </div>
                         <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary mostrarMas">{{__('Mostrar Más') }}</a>
                     </div>

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ad_id')->nullable();
+            $table->foreign('ad_id')
+                    ->references('id')
+                    ->on('ads')
+                    ->onDelete('cascade');
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

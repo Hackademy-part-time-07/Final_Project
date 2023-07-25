@@ -6,6 +6,7 @@ use App\Models\Ad;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -55,6 +56,15 @@ class AdminController extends Controller
     return redirect()->back()->withMessage(['type' => 'success', 'text' => 'El usuario ya no es revisor']);
 }
 
+public function delete(User $user)
+{
+    if (Auth::check() && Auth::user()->is_admin && !Auth::user()->is_revisor){
+        $user->delete();
+        return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Usuario eliminado correctamente']);
+    }else{
+        return redirect()->route('home')->withMessage(['type'=> 'danger', 'text'=> 'Acceso denegado, no eres administrador']);
+    }
+}
     public function acceptAd (Ad $ad) {
         $ad->setAccepted(true);
         $ad->save();

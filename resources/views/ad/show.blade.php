@@ -29,14 +29,14 @@
                     </div>
                 
                 <div class="col-12 col-md-6 bodyShow">
-                    <div class="precioShow">{{ $ad->price }}</div>
+                    <div class="precioShow">{{ is_float($ad->price) ? number_format($ad->price, 2) : number_format($ad->price) }}€</div>
                     <div class="tituloShow">{{ $ad->title }}</div>
                     <div class="descripcionShow">{{ $ad->body }}</div>
                     <div class="showTecnic px-3">
                         <div class="publicadoShow"><b>{{__('Publicado el') }}: </b>{{ $ad->created_at->format('d/m/Y') }}</div>
-                        <div class="Usershow"><b>{{__('Por') }}: </b>{{ $ad->user->name}}</div>
+                        <div class="userShow"><b>{{__('Por') }}: </b>{{ $ad->user->name}}</div>
                     
-                        <div class="categoriaShow"><a class="category-tag" href="{{ route('category.ads', $ad->category) }}" >{{ $ad->category->name }}</a></div>
+                        <div class="categoriaShow"><a class="category-tag" style="text-decoration:none" href="{{ route('category.ads', $ad->category) }}" >{{ $ad->category->name }}</a></div>
                     </div>
                 </div>
                 <div class=" d-flex justify-content-center"><a href="#" class="btn btn-success m-3 botonComprar">Comprar</a></div>

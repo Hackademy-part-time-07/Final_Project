@@ -23,13 +23,11 @@
             @if (Route::has('login'))
                     <a class=" enter btn btn-outline-secondary mx-3" href="{{ route('login') }}"><span>{{__('Entrar') }}</span></a>
             @endif
-            @if (Route::has('register'))
-                    <a class=" register btn btn-info" href="{{ route('register') }}"><span>{{__('Registrar') }}</span></a>
-            @endif
+            
             @else
             <ul>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle usuario" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }} 
                     </a>
                 <ul class="dropdown-menu navRevisor" aria-labelledby="navbarDropdown">
