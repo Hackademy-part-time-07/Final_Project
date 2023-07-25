@@ -248,11 +248,12 @@ ul{
 .piedepagina{
     background-color: var(--primary);
     width: 100vw;
-    position: absolute;
-    left:0;
-    bottom: 0;
 }
 
 .contenedorfooter{
     margin-top: 15vh;
 }
+
+
+/************************************** RESPONSIVE********************************************/
+
