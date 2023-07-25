@@ -133,6 +133,31 @@ ul{
     color: var(--secondary);
 }
 
+.buscador{
+    margin-right: 2vw;
+}
+
+.buscador input{
+    border: 2px solid var(--primary);
+}
+
+.buscador input:focus {
+    outline: 6px solid var(--primary);
+}
+
+
+.botonBuscador{
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    transition: all 0.7s ease;
+}
+
+.botonBuscador:hover{
+    border: 2px solid white;
+    color: white;
+    background-color: var(--primary);
+}
+
 
 /*************Anuncios**********/
 .anuncios{
@@ -157,6 +182,7 @@ ul{
 .anuncios .mostrarMas{
     transition: all 0.7s ease;
     background-color: var(--primary);
+    border: black;
 }
 
 .anuncios:hover .mostrarMas{
@@ -248,11 +274,12 @@ ul{
 .piedepagina{
     background-color: var(--primary);
     width: 100vw;
-    position: absolute;
-    left:0;
-    bottom: 0;
 }
 
 .contenedorfooter{
     margin-top: 15vh;
 }
+
+
+/************************************** RESPONSIVE********************************************/
+
