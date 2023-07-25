@@ -141,6 +141,11 @@ ul{
     border: 2px solid var(--primary);
 }
 
+.buscador input:focus {
+    outline: 6px solid var(--primary);
+}
+
+
 .botonBuscador{
     border: 2px solid var(--primary);
     color: var(--primary);
