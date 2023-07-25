@@ -2,10 +2,7 @@
 
 namespace App\Http\Livewire;
 
-<<<<<<< HEAD
-=======
-use App\Jobs\GoogleVisionRemoveFaces;
->>>>>>> ff3404a6d2e2c17797d576a80fe459df7259c484
+
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionRemoveFaces;
 use App\Jobs\GoogleVisionSafeSearchImage;
