@@ -133,6 +133,26 @@ ul{
     color: var(--secondary);
 }
 
+.buscador{
+    margin-right: 2vw;
+}
+
+.buscador input{
+    border: 2px solid var(--primary);
+}
+
+.botonBuscador{
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    transition: all 0.7s ease;
+}
+
+.botonBuscador:hover{
+    border: 2px solid white;
+    color: white;
+    background-color: var(--primary);
+}
+
 
 /*************Anuncios**********/
 .anuncios{
