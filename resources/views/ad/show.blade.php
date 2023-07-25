@@ -44,5 +44,5 @@
             </div>
         </div>
         
-    
+        @includeIf('components.footer')
     </x-layout>
