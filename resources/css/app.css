@@ -13,6 +13,7 @@
 
 body{
     overflow-x: hidden;
+    background-color: var(--white);
 }
 
 
@@ -20,15 +21,38 @@ body{
     --primary: rgb(149, 83, 83);
     --secondary:rgb(83, 33, 33);
     --black: rgb(00,00,00);
+    --black2: rgb(72, 71, 71);
     --white: rgb(254, 254, 254);
-    
+    --white2: rgb(230, 230, 230);
 }
 
-h1, h2{
+.dark{
+    --black: rgb(255, 255, 255);
+    --black2:rgb(230, 230, 230);
+    --white: rgb(0, 0, 0);
+    --white2: rgb(72, 71, 71);
+}
+
+h1, h2, h3{
     text-align: center;
     margin-bottom: 3rem;
     color: var(--black);
     text-shadow: 1px 1px 1px #000000;
+}
+
+li{
+    color: var(--black);
+}
+
+.primerObjeto{
+    background-color: var( --secondary);
+    color: white;
+}
+
+.primerObjeto:hover{
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary)
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -79,16 +103,21 @@ h1, h2{
     background-color: var(--white);
     border-bottom: 5px solid;
     border-color: var(--secondary);
+    color: var(--black);
 }
 
 .logo img{
     margin: 0;
-    padding: 0;
+    padding: 1px;
+    border: 1px solid var(--black);
+    border-radius: 3rem;
+    background-color: white;
 }
 
 .categorias{
     position: relative;
     top: 1vh;
+    color: var(--black);
 }
 .usuario{
     position: relative;
@@ -123,14 +152,27 @@ ul{
     color: white;
 }
 
+#luna{
+    color: var(--black);
+}
+
 .crearAnuncio{
     background-color: var( --secondary);
+    color: white;
 }
+
+.crearAnuncio:hover{
+    background-color: white;
+    color: var(--primary);
+    border: 2px solid var(--primary)
+}
+
 .enter{
     border: 2px solid;
     border-radius: 10px;
     border-color: var(--secondary);
     color: var(--secondary);
+    background-color: white;
 }
 
 .buscador{
@@ -150,6 +192,7 @@ ul{
     border: 2px solid var(--primary);
     color: var(--primary);
     transition: all 0.7s ease;
+    background-color: white;
 }
 
 .botonBuscador:hover{
@@ -159,13 +202,21 @@ ul{
 }
 
 
+
+
 /*************Anuncios**********/
 .anuncios{
-    box-shadow: 6px 7px 23px 0px rgba(0, 0, 0, 0.633);
+    box-shadow: 4px 5px 18px 0px var(--black2);
     transition: all 0.6s ease;
     text-align: center;
     width: 20rem;
     overflow: hidden;
+    color:var(--black);
+    background-color: var(--white2);
+}
+
+p{
+    color: var(--black);
 }
 
 .anuncios img{
@@ -193,15 +244,17 @@ ul{
 .imagenShow{
     border: 2px solid var(--primary);
     border-radius: 0.3rem;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+    box-shadow: 1px 2px 10px 0px var(--black2);
 }
 
 .bodyShow{
     width: auto;
     text-align: center;
+    color: var(--black);
     border: 1px solid var(--primary);
     border-radius: 0.3rem;
-    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+    box-shadow: 1px 2px 10px 0px var(--black2);
+    background-color: var(--white2);
 }
 
 .tituloShow{

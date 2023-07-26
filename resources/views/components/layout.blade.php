@@ -16,7 +16,6 @@
     @if (session()->has('message'))
         <x-alert :type="session('message')['type']" :message="session('message')['text']"/>
     @endif 
-    
     {{ $slot }}
 
 
@@ -26,7 +25,7 @@
 
 
 
-
+    
     @livewireScripts
     {{ $script ?? '' }}
     @vite(['resources/js/app.js'])
