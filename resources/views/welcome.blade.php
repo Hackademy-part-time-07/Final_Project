@@ -3,15 +3,16 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <ul class="list-inline">
                     @foreach ($categories as $category)
-                        <li class="list-inline-item">
-                            <a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $category) }}">
-                                <i class="fa fa-icono">{{ $category->name }}</i>
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+            <div class="col-6 col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $category->name }}</h5>
+                        <a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $category) }}" class="btn btn-primary">{{__('Ver anuncios') }}</a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
             </div>
         </div>
 
