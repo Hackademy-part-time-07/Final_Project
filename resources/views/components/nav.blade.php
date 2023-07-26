@@ -7,7 +7,8 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <ul class="d-lg-flex">
-                    <li class="mt-3 mt-lg-0 d-flex"><a class=" crearAnuncio btn btn-success text-white mx-lg-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a></li>
+                    <li><i id="luna" class="bi bi-moon"></i></li>
+                    <li class="mt-3 mt-lg-0 d-flex"><a class=" crearAnuncio btn mx-lg-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a></li>
                     <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
                         <ul class="dropdown-menu  navCategorias" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
