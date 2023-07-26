@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container content-wrap">
         <div class="d-flex justify-content-center my-5">
             <div class="col-12 col-md-6">
 

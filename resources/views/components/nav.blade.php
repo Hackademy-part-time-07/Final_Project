@@ -8,7 +8,7 @@
             <div class="navbar-nav">
                 <ul class="d-lg-flex">
                     <li class="mt-3 mt-lg-0 d-flex"><a class=" crearAnuncio btn btn-success text-white mx-lg-3" href="{{ route('ads.create') }}">{{__('Crear anuncio') }}</a></li>
-                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle categorias " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('Categorías') }}</a>
                         <ul class="dropdown-menu  navCategorias" aria-labelledby="navbarDropdown">
                             @foreach ($categories as $category)
                                 <li><a class="dropdown-item" href="{{ route('category.ads', $category) }}">{{ __($category->name) }}</a></li>
@@ -22,8 +22,8 @@
                         @endif
                         
                         @else
-                        <ul>
-                            <li class="nav-item dropdown mt-3 mt-lg-0">
+                        <ul class="px-0">
+                            <li class="nav-item dropdown mt-lg-0">
                                 <a class="nav-link dropdown-toggle usuario" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }} 
                                 </a>

@@ -13,7 +13,9 @@
 
 body{
     overflow-x: hidden;
+    height: 100%;
 }
+
 
 
 :root{
@@ -88,11 +90,10 @@ h1, h2{
 
 .categorias{
     position: relative;
-    top: 1vh;
+    
 }
 .usuario{
     position: relative;
-    top: 1vh;
     margin-right: 1vw;
 }
 
@@ -272,13 +273,22 @@ ul{
 
 /*************Footer**************/
 .piedepagina{
-    background-color: var(--primary);
-    width: 100vw;
+
 }
 
 .contenedorfooter{
     margin-top: 15vh;
+    height:5rem;
+    background-color: var(--primary);
+    width: 100vw;
 }
+
+.content-wrap {
+    min-height: 61vh;
+    box-sizing: border-box;
+}
+
+
 
 
 /************************************** RESPONSIVE********************************************/
