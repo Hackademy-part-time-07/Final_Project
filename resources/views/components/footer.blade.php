@@ -1,5 +1,5 @@
 <div class="container-fluid contenedorfooter">
-    <footer class="row py-3 border-top piedepagina">
+    <footer class="row py-3 border-top">
         <div class="col-6 d-flex justify-content-center">
             <span class="text-muted">&copy; 2022 Company, Inc</span>
         </div>
