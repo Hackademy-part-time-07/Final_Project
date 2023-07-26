@@ -116,13 +116,12 @@ li{
 
 .categorias{
     position: relative;
-    top: 1vh;
     color: var(--black);
 }
 .usuario{
     position: relative;
-    top: 1vh;
     margin-right: 1vw;
+    color: var(--black);
 }
 
 .navCategorias{
@@ -154,6 +153,8 @@ ul{
 
 #luna{
     color: var(--black);
+    position: relative;
+    top: 1vh;
 }
 
 .crearAnuncio{
@@ -163,8 +164,8 @@ ul{
 
 .crearAnuncio:hover{
     background-color: white;
-    color: var(--primary);
-    border: 2px solid var(--primary)
+    border: 2px solid var(--primary);
+    color: var(--secondary);
 }
 
 .enter{
