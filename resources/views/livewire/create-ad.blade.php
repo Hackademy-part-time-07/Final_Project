@@ -53,8 +53,8 @@
                     <div class="row">
                         @foreach ($images as $key=>$image)
                             <div class="col-12 col-md-4">
-                                <img src="{{ $image->temporaryUrl() }}" alt="" class="img-fluid">
-                                <button type="button" class="btn btn-danger" wire:click="removeImage({{ $key }})">Eliminar</button>
+                                <img src="{{ $image->temporaryUrl() }}" alt="" class="img-fluid h-75">
+                                <button type="button" class="btn btn-danger mt-3" wire:click="removeImage({{ $key }})">Eliminar</button>
                             </div>
                         @endforeach
                     </div>

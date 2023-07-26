@@ -6,6 +6,7 @@ use App\Models\Ad;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -24,16 +25,6 @@ class AdminController extends Controller
         return view('admin.home', compact('users','roles', 'reviewers', 'ad'));
     }
 
-    // public function assignReviewer(Request $request, User $user)
-    // {
-    //     $revisorRoleID = Role::where('name', 'revisor')->first()->id;
-    //     if (!$user->roles->contains($revisorRoleID)) {
-    //         $user->roles()->attach($revisorRoleID);
-    //         return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Rol de Revisor asignado correctamente']);
-    //     } else {
-    //         return redirect()->back()->withMessage(['type' => 'warning', 'text' => 'El usuario ya tiene el rol de Revisor']);
-    //     }
-    // }
     public function assignReviewer(Request $request, User $user)
 {
     $revisorRole = Role::where('name', 'revisor')->first();
@@ -41,13 +32,16 @@ class AdminController extends Controller
         $revisorRoleID = $revisorRole->id;
         if (!$user->roles->contains($revisorRoleID)) {
             $user->roles()->attach($revisorRoleID);
+            $user->is_revisor = true;
+            $user->save();
             return redirect()->back()->withMessage(['type' => 'success', 
                                                     'text' => 'Rol de Revisor asignado correctamente']);
         } else {
             return redirect()->back()->withMessage(['type' => 'warning', 
                                                     'text' => 'El usuario ya tiene el rol de Revisor']);
         }
-    } else {
+    }
+    else {
         return redirect()->back()->withMessage(['type' => 'error', 
                                                 'text' => 'El rol de Revisor no está definido']);
     }
@@ -58,9 +52,20 @@ class AdminController extends Controller
 {
     $reviewerRoleID = Role::where('name', 'revisor')->first()->id;
     $user->roles()->detach($reviewerRoleID);
+    $user->is_revisor = false;
+    $user->save();
     return redirect()->back()->withMessage(['type' => 'success', 'text' => 'El usuario ya no es revisor']);
 }
 
+public function delete(User $user)
+{
+    if (Auth::check() && Auth::user()->is_admin){
+        $user->delete();
+        return redirect()->back()->withMessage(['type' => 'success', 'text' => 'Usuario eliminado correctamente']);
+    }else{
+        return redirect()->route('home')->withMessage(['type'=> 'danger', 'text'=> 'Acceso denegado, no eres administrador']);
+    }
+}
     public function acceptAd (Ad $ad) {
         $ad->setAccepted(true);
         $ad->save();

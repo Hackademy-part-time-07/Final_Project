@@ -1,7 +1,9 @@
-<div class="container contenedorfooter">
-    <footer class="d-flex justify-content-center align-items-center py-3 border-top fixed-bottom piedepagina">
-        <div class="col-md-4 d-flex justify-content-between align-items-center">
-            <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+<div class="container-fluid contenedorfooter">
+    <footer class="row py-3 border-top piedepagina">
+        <div class="col-6 d-flex justify-content-center">
+            <span class="text-muted">&copy; 2022 Company, Inc</span>
+        </div>
+        <div class="col-6 d-flex justify-content-center">
             <a href="{{ route('revisor.become') }}" class="text-dark trabaja">{{__('Trabaja con nosotros') }}</a>
         </div>
         {{-- <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

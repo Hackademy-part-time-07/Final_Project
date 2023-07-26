@@ -110,6 +110,7 @@
     <h1>Administrar usuarios y revisores</h1>
 
 <h2>Usuarios y Revisores</h2>
+<table>
 <ul class="row text-center">
     @foreach ($users as $user)
         <li class="my-3">
@@ -122,11 +123,20 @@
                 </form>
             @else
                 (Usuario)
-                <form action="{{ route('admin.users.assign_reviewer', $user->id) }}" method="POST">
-                    @csrf
-                    <button class="my-2 btnAdm" type="submit">Asignar Revisor</button>
-                </form>
+                <div class="d-flex justify-content-center align-items-center">
+                    <form action="{{ route('admin.users.assign_reviewer', $user->id) }}" method="POST">
+                        @csrf
+                        <button class="my-2 mx-1 btnAdm" type="submit">Asignar Revisor</button>
+                    </form>
+                </div>
             @endif
+            <div>
+                <form action="{{ route('admin.delete', $user->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btnAdm mx-1">Eliminar usuario</button>
+                </form>
+            </div>
         </li>
     @endforeach
 </ul>

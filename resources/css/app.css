@@ -1,10 +1,20 @@
 @import '~bootstrap/dist/css/bootstrap';
 @import '~flag-icon-css/css/flag-icons';
+@import '~bootstrap-icons/font/bootstrap-icons';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&family=Oswald:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@100&display=swap');
+
+
+
 
 *{
     font-family: 'Noto Sans', sans-serif;
+    
 }
+
+body{
+    overflow-x: hidden;
+}
+
 
 :root{
     --primary: rgb(149, 83, 83);
@@ -15,10 +25,52 @@
 }
 
 h1, h2{
-    text-align: left;
+    text-align: center;
     margin-bottom: 3rem;
     color: var(--black);
     text-shadow: 1px 1px 1px #000000;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: var(--principal) ;
+    }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+    }
+
+  *::-webkit-scrollbar-track {
+    background: white;
+    }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+    border: 2px solid var(--dia);
+    }
+
+/************Imagenes**************/
+.VERY_UNLIKELY{
+    color: greenyellow;
+}
+.UNLIKELY{
+    color: green;
+}
+.POSSIBLE{
+    color: orange;
+}
+.LIKELY{
+    color: orangered;
+}
+.VERY_LIKELY{
+    color: red;
+}
+.UNKNOWN{
+    color: grey;
 }
 
 
@@ -26,7 +78,7 @@ h1, h2{
 .barraNav{
     background-color: var(--white);
     border-bottom: 5px solid;
-    border-color: var(--secondary)
+    border-color: var(--secondary);
 }
 
 .logo img{
@@ -37,6 +89,11 @@ h1, h2{
 .categorias{
     position: relative;
     top: 1vh;
+}
+.usuario{
+    position: relative;
+    top: 1vh;
+    margin-right: 1vw;
 }
 
 .navCategorias{
@@ -67,13 +124,38 @@ ul{
 }
 
 .crearAnuncio{
-background-color: var( --secondary);
+    background-color: var( --secondary);
 }
 .enter{
     border: 2px solid;
     border-radius: 10px;
     border-color: var(--secondary);
     color: var(--secondary);
+}
+
+.buscador{
+    margin-right: 2vw;
+}
+
+.buscador input{
+    border: 2px solid var(--primary);
+}
+
+.buscador input:focus {
+    outline: 6px solid var(--primary);
+}
+
+
+.botonBuscador{
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    transition: all 0.7s ease;
+}
+
+.botonBuscador:hover{
+    border: 2px solid white;
+    color: white;
+    background-color: var(--primary);
 }
 
 
@@ -83,6 +165,7 @@ background-color: var( --secondary);
     transition: all 0.6s ease;
     text-align: center;
     width: 20rem;
+    overflow: hidden;
 }
 
 .anuncios img{
@@ -95,14 +178,72 @@ background-color: var( --secondary);
     color: white;
 }
 
+
 .anuncios .mostrarMas{
     transition: all 0.7s ease;
+    background-color: var(--primary);
+    border: black;
 }
 
 .anuncios:hover .mostrarMas{
     background-color: white;
     color: var(--primary);
 }
+
+.imagenShow{
+    border: 2px solid var(--primary);
+    border-radius: 0.3rem;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+}
+
+.bodyShow{
+    width: auto;
+    text-align: center;
+    border: 1px solid var(--primary);
+    border-radius: 0.3rem;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.971);
+}
+
+.tituloShow{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--secondary);
+    padding-bottom: 2vh;
+}
+
+.precioShow{
+    color: rgb(56, 165, 42);
+    font-weight: bold;
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    font-size: 1.4rem;
+    padding-right: 2vh;
+    
+}
+
+.descripcionShow{
+    padding-bottom: 3vh;
+}
+
+.showTecnic{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1vh;
+}
+
+.publicadoShow{
+    font-size: 0.6rem;
+}
+
+.userShow{
+    font-size: 0.6rem;
+}
+
+.categoriaShow{
+    font-style: oblique;
+}
+
 
 
 /************Formularios************/
@@ -132,8 +273,13 @@ background-color: var( --secondary);
 /*************Footer**************/
 .piedepagina{
     background-color: var(--primary);
+    width: 100vw;
 }
 
 .contenedorfooter{
     margin-top: 15vh;
 }
+
+
+/************************************** RESPONSIVE********************************************/
+

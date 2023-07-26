@@ -2,13 +2,13 @@
     <x-slot name='title'></x-slot>
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las últimas novedades:') }}</h1>
             </div>
         </div>
         <div class="row">
             @forelse ($ads as $ad)
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
                 <div class="card mb-5 anuncios">
                     @if ($ad->images()->count() > 0)
                         <img src="{{ $ad->images()->first()->getUrl(400,300) }}" class="card-img-top" alt="...">
@@ -17,14 +17,9 @@
                     @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $ad->title }}</h5>
-                        <h6 class="card-subtitle mb-2">{{ $ad->price }}</h6>
-                        <p class="card-text">{{ $ad->body }}</p>
+                        <h6 class="card-subtitle mb-2">{{ is_float($ad->price) ? number_format($ad->price, 2) : number_format($ad->price) }}€</h6>
                         <div class="card-subtitle mb-2">
-                            <strong><a class="categoriaCard" href="{{ route('category.ads', $ad->category) }}">{{ __($ad->category->name) }}</a></strong>
-                            <i>{{ $ad->created_at->format('d/m/Y') }}</i>
-                        </div>
-                        <div class="card-subtitle mb-2">
-                            <small>{{ $ad->user->name }}</small>
+                            <strong><a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $ad->category) }}">{{ __($ad->category->name) }}</a></strong>
                         </div>
                         <a href="{{ route('ads.show', $ad) }}" class="btn btn-primary mostrarMas">{{__('Mostrar Más') }}</a>
                     </div>
@@ -38,4 +33,5 @@
             @endforelse
         </div>
     </div>
+    @includeIf('components.footer')
 </x-layout>

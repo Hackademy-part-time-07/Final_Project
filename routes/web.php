@@ -25,6 +25,7 @@ Route::middleware(['isAdmin'])->group(function(){
     Route::post('/admin/users/{user}/reject', [AdminController::class, 'rejectAd'])->name('admin.users.reject');
     Route::post('/admin/users/{user}/assign_reviewer', [AdminController::class, 'assignReviewer'])->name('admin.users.assign_reviewer');
     Route::post('/admin/users/{user}/remove_reviewer', [AdminController::class, 'removeReviewer'])->name('admin.users.remove_reviewer');
+    Route::delete('/admin/delete/{user}', [AdminController::class, 'delete'])->name('admin.delete');
     Route::post('/admin/ad/{ad}/accept', [AdminController::class, 'acceptAd'])->name('admin.ad.accept');
     Route::post('/admin/ad/{ad}/reject', [AdminController::class, 'rejectAd'])->name('admin.ad.reject');
 });

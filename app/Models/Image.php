@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\Storage;
 class Image extends Model
 {
     use HasFactory;
+
     protected $fillable = ['path'];
+    protected $casts = [
+        'labels'=>'array'
+    ];
+    
     public function ads(){
         return $this->belongsTo(Ad::class);
     }
+
 
     public static function getUrlByFilePath($filePath, $w= null, $h= null){
         if(!$w && !$h){
@@ -27,5 +33,9 @@ class Image extends Model
 
     public function getUrl($w= null, $h= null){
         return self::getUrlByFilePath($this->path, $w,$h);
+    }
+
+    public function getLabels(){
+        return $this->labels ? $this->labels : [];
     }
 }

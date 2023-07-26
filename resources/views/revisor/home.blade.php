@@ -1,6 +1,6 @@
 <x-layout>
     {{-- <x-slot name = 'title'>Revisor Home</x-slot> --}}
-    <h1>Revisar anuncios</h1>
+    <h1 class="text-center">Revisar anuncios</h1>
     @if ($ad)
     <div class="container my-5 py-5">
         <div class="row">
@@ -18,6 +18,24 @@
                                 @forelse ($ad->images as $image )
                                     <div class="col md-4">
                                         <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        Adult : <i class="bi bi-circle-fill {{ $image->adult }}"></i>{{ $image->adult }}<br>
+                                        Spoof : <i class="bi bi-circle-fill {{ $image->spoof }}"></i>{{ $image->spoof }}<br>
+                                        Medical : <i class="bi bi-circle-fill {{ $image->medical }}"></i>{{ $image->medical }}<br>
+                                        Violence : <i class="bi bi-circle-fill {{ $image->violence }}"></i>{{ $image->violence }}<br>
+                                        Racy : <i class="bi bi-circle-fill {{ $image->racy }}"></i>{{ $image->racy }}<br>
+                                        <br><br>
+
+                                        <b>Labels</b><br>
+                                        @forelse ($image->getlabels() as $label)
+                                            <a href="#" class="btn btn-info btn-sm m1">{{ $label }}</a>
+                                            @empty
+                                            Sin etiqueta
+                                        @endforelse
+                                        id : {{ $image->id }}<br>
+                                        path : {{ $image->path }}<br>
+                                        url : {{ $image->url }}<br>
                                     </div>
                                 @empty
                                     <div class="col 12">
@@ -84,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row my-3">
+                <div class="row my-3 justify-content-end">
                     <div class="col-6">
                         <form action="{{ route('revisor.ad.accept', $ad) }}" method="POST">
                         @csrf
@@ -92,8 +110,6 @@
                         <button class="btn btn-success">{{__('Aceptar') }}</button>
                         </form>
                     </div>
-                </div>
-                <div class="row my-3">
                     <div class="col-6">
                         <form action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
                         @csrf
