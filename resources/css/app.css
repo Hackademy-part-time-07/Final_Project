@@ -118,7 +118,7 @@ li{
 
 .categorias{
     position: relative;
-    top: 1vh;
+    color: var(--black);
 }
 .usuario{
     position: relative;
