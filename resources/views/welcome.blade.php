@@ -2,6 +2,23 @@
     <x-slot name='title'></x-slot>
     <div class="container">
         <div class="row">
+            <div class="col-12">
+                <ul class="list-inline">
+                    @foreach ($categories as $category)
+                        <li class="list-inline-item">
+                            <a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $category) }}">
+                                <i class="fa fa-icono">{{ $category->name }}</i>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="row">
             <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las últimas novedades:') }}</h1>
             </div>
