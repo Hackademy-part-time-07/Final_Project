@@ -50,3 +50,5 @@ Route::get('/category/{category:name}/ads', [PublicController::class, 'adsByCate
 Route::post('/locale/{locale}', [PublicController::class, 'setLocale'])->name('locale.set');
 
 Route::get('/search', [PublicController::class, 'search'])->name('search');
+
+ Route::get('ad/search_results', [PublicController::class, 'ad.search_results'])->name('search_results');

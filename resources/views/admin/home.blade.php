@@ -115,7 +115,7 @@
     @foreach ($users as $user)
         <li class="my-3">
             {{ $user->name }} - {{ $user->email }}
-            @if ($reviewers->contains('id', $user->id))
+            @if ($user->is_revisor)
                 (Revisor)
                 <form action="{{ route('admin.users.remove_reviewer', $user->id) }}" method="POST">
                     @csrf
@@ -134,7 +134,7 @@
                 <form action="{{ route('admin.delete', $user->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btnAdm mx-1">Eliminar usuario</button>
+                    <button type="submit" class="btnAdm mx-1" onclick="return confirm('¿Estás seguro de que deseas eliminar a este usuario?')">Eliminar usuario</button>
                 </form>
             </div>
         </li>

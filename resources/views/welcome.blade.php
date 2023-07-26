@@ -28,7 +28,7 @@
             @empty
             <div class="col-12">
                 <h2>{{__('Parece que no hay ningun anuncio') }}</h2>
-                <a href="{{ route('ads.create') }}" class="btn btn-success">{{__('Vende tu primer objeto') }}</a>
+                <a href="{{ route('ads.create') }}" class="btn primerObjeto">{{__('Vende tu primer objeto') }}</a>
             
             @endforelse
         </div>
