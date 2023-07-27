@@ -1,9 +1,5 @@
 <div>
-    @if (session()->has('message'))
-        <div class="alert alert-success" role="alert">
-            {{ session('message') }}
-        </div>        
-    @endif
+
 
     <form wire:submit.prevent="store">
         @csrf
@@ -65,4 +61,9 @@
             <button type="submit" class="btn btn-info">{{__('Crear') }}</button>
         </div>
     </form>
+    @if (session()->has('message'))
+    <div class="alert alert-success" role="alert">
+        {{ session('message') }}
+    </div>        
+    @endif
 </div>
