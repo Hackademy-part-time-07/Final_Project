@@ -64,7 +64,7 @@
                         <x-locale lang="es" country="es"/>
                     </div></li>
                     <li class="mt-3 mt-lg-0">    <form action="{{route('search')}}" method="GET" class="d-flex buscador" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" name="q">
+                        <input class="form-control me-2" type="search" placeholder="{{ __('Buscar') }}" aria-label="Search" name="q">
                         <button class="btn botonBuscador" type="submit"><i class="bi bi-search"></i></button>
                         </form></li>
                 </ul>

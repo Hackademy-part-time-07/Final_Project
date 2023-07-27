@@ -9,9 +9,9 @@
 "ordenadores": "computers",
 "Mostrar Más": "Show More",
 "Uyy.. parece que no hay nada": "Whoops.. seems no objects here",
-"Vende tu primer objeto": "Sell your first item",
+"Vende tu primer articulo": "Sell your first item",
 "o": "or",
-"Vuelve a la home": "Go back to home",
+"Vuelve a la Home": "Go back to home",
 "Quienes somos": "About us",
 "Dónde estamos": "Where",
 "Nuevo Anuncio": "New Advertisement",
@@ -60,5 +60,9 @@
 "Ya eres revisor!": "You are already a reviewer!",
 "No hay anuncios para revisar, vuelve más tarde, gracias.": "No advertisement to review, check back later, thank you.",
 "Imágenes": "Images",
-"No hay imágenes": "No images"
+"No hay imágenes": "No images",
+"Parece que no hay ningun anuncio": "There seems to be no announcement",
+"Estas son las últimas novedades:": "These are the latest additions:",
+"Uyy.. parece que no hay nada de esta categoría":"Oops... there seems to be nothing in this category.",
+"Buscar": "Search"
 }

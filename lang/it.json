@@ -9,9 +9,9 @@
 "ordenadores": "computer",
 "Mostrar Más": "Mostra di più",
 "Uyy.. parece que no hay nada": "Ops.. sembra che non ci siano oggetti qui",
-"Vende tu primer objeto": "Vendi il tuo primo oggetto",
+"Vende tu primer articulo": "Vendete il vostro primo articolo",
 "o": "o",
-"Vuelve a la home": "Torna alla home",
+"Vuelve a la Home": "Torna alla home",
 "Quienes somos": "Chi siamo",
 "Dónde estamos": "Dove siamo",
 "Nuevo Anuncio": "Nuovo annuncio",
@@ -60,6 +60,10 @@
 "Ya eres revisor!": "Sei già un recensore!",
 "No hay anuncios para revisar, vuelve más tarde, gracias.": "Non ci sono annunci da recensire, tornate più tardi, grazie.",
 "Imágenes": "Immagine",
-"No hay imágenes": "Nessuna immagine"
+"No hay imágenes": "Nessuna immagine",
+"Parece que no hay ningun anuncio": "Non sembra esserci alcun annuncio",
+"Estas son las últimas novedades:": "Questi sono gli ultimi sviluppi:",
+"Uyy.. parece que no hay nada de esta categoría":"Ops... sembra che non ci sia nulla in questa categoria.",
+"Buscar": "Ricerca"
 
 }

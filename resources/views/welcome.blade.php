@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name='title'></x-slot>
-    <div class="container">
+    <div class="container content-wrap">
         <div class="row justify-content-center">
             <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las últimas novedades:') }}</h1>
@@ -26,12 +26,13 @@
                 </div>
             </div>
             @empty
-            <div class="col-12">
+            <div class="col-12 text-center">
                 <h2>{{__('Parece que no hay ningun anuncio') }}</h2>
-                <a href="{{ route('ads.create') }}" class="btn primerObjeto">{{__('Vende tu primer objeto') }}</a>
+                <a href="{{ route('ads.create') }}" class="btn primerObjeto">{{__('Vende tu primer articulo') }}</a>
             
             @endforelse
         </div>
+    </div>
     </div>
     @includeIf('components.footer')
 </x-layout>

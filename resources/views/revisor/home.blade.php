@@ -13,7 +13,7 @@
                         <div class="col-md-3">
                             <b>{{ __('Imágenes') }}</b>
                         </div>
-                        <div class="col-9">
+                        <div class="col-md-9">
                             <div class="row">
                                 @forelse ($ad->images as $image )
                                     <div class="col md-4">
@@ -102,16 +102,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="row my-3 justify-content-end">
+                <div class="row my-3 justify-content-center">
                     <div class="col-6">
-                        <form action="{{ route('revisor.ad.accept', $ad) }}" method="POST">
+                        <form class="text-center" action="{{ route('revisor.ad.accept', $ad) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <button class="btn btn-success">{{__('Aceptar') }}</button>
                         </form>
                     </div>
                     <div class="col-6">
-                        <form action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
+                        <form class="text-center" action="{{ route('revisor.ad.reject', $ad) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <button class="btn btn-danger">{{__('Rechazar') }}</button>
