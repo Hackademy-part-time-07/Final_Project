@@ -2,6 +2,11 @@
     <x-slot name='title'></x-slot>
     <div class="container">
         <div class="row">
+            <div class="col-6 col-sm-12">
+                <h1>{{__('Estas son las diferentes categorías:') }}</h1>
+            </div>
+            <div class="lista_categorias">
+            </div>
             <div class="col-12">
                     @foreach ($categories as $category)
             <div class="col-6 col-md-4">
