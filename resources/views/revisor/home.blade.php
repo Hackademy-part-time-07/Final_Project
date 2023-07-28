@@ -16,10 +16,10 @@
                         <div class="col-md-9">
                             <div class="row">
                                 @forelse ($ad->images as $image )
-                                    <div class="col md-4">
+                                    <div class="col-md-4">
                                         <img src="{{ $image->getUrl(400,300) }}" class="img-fluid" alt="...">
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-3 ">
                                         Adult : <i class="bi bi-circle-fill {{ $image->adult }}"></i>{{ $image->adult }}<br>
                                         Spoof : <i class="bi bi-circle-fill {{ $image->spoof }}"></i>{{ $image->spoof }}<br>
                                         Medical : <i class="bi bi-circle-fill {{ $image->medical }}"></i>{{ $image->medical }}<br>
@@ -34,8 +34,6 @@
                                             Sin etiqueta
                                         @endforelse
                                         id : {{ $image->id }}<br>
-                                        path : {{ $image->path }}<br>
-                                        url : {{ $image->url }}<br>
                                     </div>
                                 @empty
                                     <div class="col 12">

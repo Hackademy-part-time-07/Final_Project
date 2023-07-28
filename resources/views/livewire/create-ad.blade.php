@@ -1,6 +1,4 @@
 <div>
-
-
     <form wire:submit.prevent="store">
         @csrf
 
@@ -31,7 +29,7 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">{{__('Descripción') }}:</label>
-            <textarea wire:model="body" cols="30" rows="15" class="form-control" @error('body') is-invalid @enderror></textarea>
+            <textarea wire:model="body" cols="30" rows="5" class="form-control" @error('body') is-invalid @enderror></textarea>
             @error('body')
             {{ $message }}
         @enderror
@@ -66,4 +64,7 @@
         {{ session('message') }}
     </div>        
     @endif
+    
 </div>
+
+

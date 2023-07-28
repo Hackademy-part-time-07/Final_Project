@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name='title'></x-slot>
-    <div class="container content-wrap">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las últimas novedades:') }}</h1>
