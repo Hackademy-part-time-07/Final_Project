@@ -2,7 +2,7 @@
 <div class="container contenedorfooter">
     <footer class="row py-3">
         <div class="col-6 d-flex justify-content-center">
-            <span class="text-dark">&copy; 2022 Company, Inc</span>
+            <span class="text-dark">&copy; 2023 Grupo1, Inc</span>
         </div>
         <div class="col-6 d-flex justify-content-center">
             <a href="{{ route('revisor.become') }}" class="trabaja">{{__('Trabaja con nosotros') }}</a>
