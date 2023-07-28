@@ -261,7 +261,7 @@ p{
 }
 
 .tituloShow{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: var(--secondary);
     padding-bottom: 2vh;
@@ -273,13 +273,14 @@ p{
     display: flex;
     justify-content: end;
     position: sticky;
-    font-size: 1.4rem;
+    font-size: 2.5rem;
     padding-right: 2vh;
     
 }
 
 .descripcionShow{
     padding-bottom: 3vh;
+    font-size: 1.2rem;
 }
 
 .showTecnic{
@@ -289,11 +290,11 @@ p{
 }
 
 .publicadoShow{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 .userShow{
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 .categoriaShow{
