@@ -201,7 +201,24 @@ ul{
     color: white;
     background-color: var(--primary);
 }
+/********************** CATEGORIAS HOME*********************/
 
+.lista_categorias{
+    margin: 2rem;
+    box-shadow: 4px 5px 18px 0px var(--black2);
+    transition: all 0.6s ease;
+    text-align: center;
+    width: 20rem;
+    overflow: hidden;
+    color:var(--black);
+    background-color: var(--white2);
+}
+
+.lista_categorias:hover{
+    box-shadow: 6px 7px 13px 0px rgba(0, 0, 0, 0.971);
+    background-color: var(--secondary);
+    color: white;
+}
 
 
 
@@ -326,7 +343,9 @@ p{
 
 /*************Footer**************/
 .piedepagina{
-    background-color: var(--primary);
+    background-color: var(--white);
+    border-top: 5px solid;
+    border-color: var(--secondary);
     width: 100vw;
 }
 

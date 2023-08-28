@@ -5,20 +5,22 @@
             <div class="col-6 col-sm-12">
                 <h1>{{__('Estas son las diferentes categorías:') }}</h1>
             </div>
-            <div class="lista_categorias">
-            </div>
             <div class="col-12">
+                <div class="row">
                     @foreach ($categories as $category)
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $category->name }}</h5>
-                        <a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $category) }}" class="btn btn-primary">{{__('Ver anuncios') }}</a>
-                    </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+                            <div class="card lista_categorias">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center text-uppercase">{{ $category->name }}</h5>
+                                    <i></i>
+                                    <a class="categoriaShow" style="text-decoration:none" href="{{ route('category.ads', $category) }}" class="btn btn-primary">{{ __('Ver anuncios') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-        @endforeach
-            </div>
+            
         </div>
 
 
